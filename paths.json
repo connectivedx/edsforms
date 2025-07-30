@@ -1,9 +1,11 @@
 {
   "mappings": [
-    "/content/eds-forms/:/"
+    "/content/eds-forms/:/",
+    "/content/aeds-forms/configuration:/.helix/config.json",
+    "/content/eds-forms/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/",
-    "/content/dam/"
+    "/content/eds-forms",
+    "/content/dam/eds-forms"
   ]
 }
