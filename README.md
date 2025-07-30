@@ -1,9 +1,9 @@
 # Your Project's Title...
-Your project's description...
+Edge Develivery Site with Universal Editor that supports AEM Forms
 
 ## Environments
-- Preview: https://main--aem-boilerplate-forms--adobe-rnd.aem.page/
-- Live: https://main--aem-boilerplate-forms--adobe-rnd.aem.live/
+- Preview: https://main--edsforms--connectivedx.aem.page/
+- Live: https://main--edsforms--connectivedx.aem.live/
 
 ## Documentation
 Before using the aem-boilerplate, we recommand you to go through the documentation on [www.aem.live](https://www.aem.live/docs/) and [experienceleague.adobe.com](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/edge-delivery/wysiwyg-authoring/authoring), more specifically:

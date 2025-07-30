@@ -1,0 +1,5 @@
+mountpoints:
+  /:
+    url: "https://author-p92368-e968987.adobeaemcloud.com/bin/franklin.delivery/connectivedx/edsforms/main"
+    type: "markup"
+    suffix: ".html"
