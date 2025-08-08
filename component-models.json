@@ -5031,5 +5031,9 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "order-accordion",
+    "fields": []
   }
 ]
