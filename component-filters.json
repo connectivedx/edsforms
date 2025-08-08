@@ -8,17 +8,18 @@
   {
     "id": "section",
     "components": [
-      "text",
-      "image",
       "button",
-      "title",
-      "hero",
       "cards",
       "columns",
-      "fragment",
-      "form",
       "embed-adaptive-form",
-      "quote"
+      "form",
+      "fragment",
+      "hero",
+      "image",
+      "order-accordion",
+      "quote",
+      "text",
+      "title"
     ]
   },
   {
@@ -60,7 +61,6 @@
       "form-reset-button",
       "form-submit-button",
       "number-input",
-      "order-accordion",
       "panel",
       "password",
       "plain-text",
