@@ -1,7 +1,7 @@
 import assert from 'assert';
 import nock from 'nock';
 import multipart from 'parse-multipart-data';
-import { setSubmitBaseUrl } from '../../../../blocks/form/constant.js';
+//import { setSubmitBaseUrl } from '../../../../blocks/form/constant.js';
 
 const thankYouMessage = 'thank you for submitting the form';
 
@@ -57,7 +57,7 @@ export const sample = {
 };
 
 export function before() {
-  setSubmitBaseUrl('http://abc.com');
+  //setSubmitBaseUrl('http://abc.com');
 }
 
 export function op(block) {

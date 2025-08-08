@@ -6,6 +6,7 @@
   ],
   "includes": [
     "/content/eds-forms",
-    "/content/dam/eds-forms"
+    "/content/dam/eds-forms",
+    "/content/forms"
   ]
 }
