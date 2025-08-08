@@ -137,7 +137,12 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 
 /* brand */
 header .nav-brand {
+  background-image: url(../../icons/Myriad_genetics_logo.svg);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: contain;
   grid-area: brand;
+  height: 2rem;
   flex-basis: 50%;
   font-size: var(--heading-font-size-s);
   font-weight: 700;
@@ -147,6 +152,10 @@ header .nav-brand {
 header nav .nav-brand img {
   width: auto;
   height: 36px;
+}
+
+header .nav-brand div {
+  visibility: hidden;
 }
 
 /* sections */
