@@ -1,11 +1,11 @@
 export default function decorate(block) {
   const markup = `<div id="order-accordion">
-    <ul>
+    <ul id="test-package-list">
         <li>
             <div class="test-package">
                 <div class="test-summary">
                     <div class="title-column">
-                        <span class="test-title">MyRisk</span>
+                        <span class="test-title">MyRisk &copyright;</span>
                         <span class="test-description">Hereditary Cancer Test</span>
                     </div>
                     <div class="description-column">
@@ -27,7 +27,7 @@ export default function decorate(block) {
             <div class="test-package">
                 <div class="test-summary">
                     <div class="title-column">
-                        <span class="test-title">Foresight</span>
+                        <span class="test-title">Foresight &copyright;</span>
                         <span class="test-description">Carrier Screen</span>
                     </div>
                     <div class="description-column">
@@ -49,7 +49,7 @@ export default function decorate(block) {
             <div class="test-package">
                 <div class="test-summary">
                     <div class="title-column">
-                        <span class="test-title">Prequel</span>
+                        <span class="test-title">Prequel &copyright;</span>
                         <span class="test-description">Prenatal Screen</span>
                     </div>
                     <div class="description-column">
@@ -59,7 +59,7 @@ export default function decorate(block) {
                 </div>
                 <div class="test-details">
                     <div class="detail-column">
-                        <p>Prequel® Prenatal Screening</p>
+                        <p>Prequel &copyright; Prenatal Screening</p>
                         <p>A prenatal Cell Free DNA (pcfDNA) screen that can determine if a pregnancy is at an increased risk for chromosomal conditions like Down, Edwards or Patau syndromes, and provides the predicated fetal sex.</p>
                         <p>When to test: 8 weeks pregnant</p>
                         <ul>
@@ -116,16 +116,21 @@ export default function decorate(block) {
         <li>
             <div class="test-package">
                 <div class="test-summary">
-                    <div class="test-title">
-                        <span class="test-title">Foresight</span>
-                        <span class="test-description">Carrier Screening</span>
+                    <div class="title-column">
+                        <div class="test-title">
+                            <span class="test-title">Foresight &copyright;</span>
+                            <span class="test-description">Carrier Screening</span>
+                        </div>
+                        <span class="plus">+</span>
+                        <div class="test-title">
+                            <span class="test-title">Prequel &copyright;</span>
+                            <span class="test-description">Prenatal Screen</span>
+                        </div> 
+                        <div class="description-column">
+                            <span class="test-description">Order both test kits with one form.</span>
+                        </div>
+                        <span class="icon arrow-up"></span>
                     </div>
-                    +
-                    <div class="test-title">
-                        <span class="test-title">Prequel</span>
-                        <span class="test-description">Prenatal Screen</span>
-                    </div>
-                    <span class="icon arrow-up"></span>
                 </div>
                 <div class="test-details">
                     <div class="detail-column">
