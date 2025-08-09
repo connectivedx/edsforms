@@ -1,48 +1,37 @@
-#order-accordion {
-}
-
 .plus {
   color: purple;
 }
-
 .test-description {
   color: gray;
   font-size: 0.8rem;
 }
-
 .test-details {
   display: none;
-
-  &.show {
-    display: block;
-  }
 }
-
+.test-details.show {
+  display: block;
+}
 .test-package {
   border-radius: 0.25rem;
   box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.2);
   padding: 2rem;
 }
-
 #test-package-list {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   list-style: none;
 }
-
 .test-summary {
   align-items: center;
   display: flex;
   gap: 2rem;
   justify-content: space-between;
 }
-
 .test-title {
   color: blue;
   font-size: 3rem;
 }
-
 .title-column {
   border-right: 1px solid lightgray;
   display: flex;
