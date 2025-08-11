@@ -66,7 +66,7 @@ export default function decorate(block) {
                     </div>
                     <div class="test-details">
                         <div class="detail-column detail-info">
-                            <p class="detail-title">Prequel &reg; Prenatal Screening</p>
+                            <h3 class="detail-title">Prequel &reg; Prenatal Screening</h3>
                             <p>A prenatal Cell Free DNA (pcfDNA) screen that can determine if a pregnancy is at an increased risk for chromosomal conditions like Down, Edwards or Patau syndromes, and provides the predicated fetal sex.</p>
                             <p><strong>When to test:</strong> 8 weeks pregnant</p>
                             <ul>
@@ -88,8 +88,8 @@ export default function decorate(block) {
                             </div>
                         </div>
                         <div class="detail-column detail-options">
-                        <div><span class="red">*</span> Required information</div>
-                            <p>Included</p>
+                            <div><span class="required">*</span> Required information</div>
+                            <h3>Included</h3>
                             <ul>
                                 <li>&checkmark; Chromasome 13 (Patau syndrome)</li>
                                 <li>&checkmark; Chromasome 18 (Edwards syndrome)</li>
@@ -97,20 +97,30 @@ export default function decorate(block) {
                             </ul>
                             <form>
                                 <div>
-                                    <p>Pregnancy Type <span class="red">*</span></p>
-                                    <input type="radio" id="singleton" name="pregnancy-type" value="singleton">
-                                    <label for="singleton">Singleton</label><br>
-                                    <input type="radio" id="multiples" name="pregnancy-type" value="multiples">
-                                    <label for="multiples">Twins/higher order multiples</label>
+                                    <h3>Pregnancy Type <span class="required">*</span></h3>
+                                    <div>
+                                        <input type="radio" id="singleton" name="pregnancy-type" value="singleton">
+                                        <label for="singleton">Singleton</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="multiples" name="pregnancy-type" value="multiples">
+                                        <label for="multiples">Twins/higher order multiples</label>
+                                    </div>
                                 </div>
                                 <div>
-                                <p>Additions (optional)</p>
-                                    <input type="checkbox" id="sca" name="additions" value="sca">
-                                    <label for="sca">Sex chromasome analysis <span class="icon info"></span></label>
-                                    <input type="checkbox" id="microdeletions" name="additions" value="microdeletions">
-                                    <label for="microdeletions">Microdeletions <span class="icon info"></span></label>
-                                    <input type="checkbox" id="eaa" name="additions" value="eaa">
-                                    <label for="eaa">Expanded Aneuploidy Analysis (EAA) <span class="icon info"></span></label>
+                                    <h3>Additions (optional)</h3>
+                                    <div>
+                                        <input type="checkbox" id="sca" name="additions" value="sca">
+                                        <label for="sca">Sex chromasome analysis <span class="icon info"></span></label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="microdeletions" name="additions" value="microdeletions">
+                                        <label for="microdeletions">Microdeletions <span class="icon info"></span></label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="eaa" name="additions" value="eaa">
+                                        <label for="eaa">Expanded Aneuploidy Analysis (EAA) <span class="icon info"></span></label>
+                                    </div>
                                 </div>
                                 <div class="order-buttons">
                                     <button class="button-add" type="button">Add to order</button>

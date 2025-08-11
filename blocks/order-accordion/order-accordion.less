@@ -27,7 +27,8 @@ button {
   padding: var(--standard-margin);
   width: 50%;
 
-  > * + * {
+  > * + *,
+  form > * + * {
     margin-top: 1rem;
   }
 }
@@ -66,13 +67,18 @@ button {
   }
 }
 
+.order-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .plus {
   color: purple;
   font-size: 1.5rem;
   font-weight: 500;
 }
 
-.red {
+.required {
   color: red;
 }
 
@@ -112,7 +118,12 @@ button {
   box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.2);
   padding: var(--standard-margin);
 
-  &.show .test-details {
+  &.show {
+    .description-column {
+      display: none;
+    }
+  }
+  .test-details {
     display: flex;
   }
 }
@@ -128,6 +139,7 @@ button {
   align-items: center;
   display: flex;
   gap: var(--standard-margin);
+  justify-content: space-between;
 }
 
 .test-title {

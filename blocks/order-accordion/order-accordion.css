@@ -21,7 +21,8 @@ button.button-order {
   padding: var(--standard-margin);
   width: 50%;
 }
-.detail-column > * + * {
+.detail-column > * + *,
+.detail-column form > * + * {
   margin-top: 1rem;
 }
 .detail-info {
@@ -53,12 +54,16 @@ button.button-order {
   align-items: center;
   justify-content: center;
 }
+.order-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
 .plus {
   color: purple;
   font-size: 1.5rem;
   font-weight: 500;
 }
-.red {
+.required {
   color: red;
 }
 .reg-mark {
@@ -91,7 +96,10 @@ button.button-order {
   box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.2);
   padding: var(--standard-margin);
 }
-.test-package.show .test-details {
+.test-package.show .description-column {
+  display: none;
+}
+.test-package .test-details {
   display: flex;
 }
 #test-package-list {
@@ -104,6 +112,7 @@ button.button-order {
   align-items: center;
   display: flex;
   gap: var(--standard-margin);
+  justify-content: space-between;
 }
 .test-title {
   color: var(--blue);
