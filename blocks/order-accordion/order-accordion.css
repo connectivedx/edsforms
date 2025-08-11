@@ -31,6 +31,9 @@ button.button-order {
 .detail-title {
   font-weight: 700;
 }
+h3 {
+  font-size: inherit;
+}
 .package-benefit {
   color: #697685;
   display: flex;
@@ -99,7 +102,7 @@ button.button-order {
 .test-package.show .description-column {
   display: none;
 }
-.test-package .test-details {
+.test-package.show .test-details {
   display: flex;
 }
 #test-package-list {
@@ -107,6 +110,7 @@ button.button-order {
   flex-direction: column;
   gap: var(--standard-margin);
   list-style: none;
+  padding: 0;
 }
 .test-summary {
   align-items: center;
