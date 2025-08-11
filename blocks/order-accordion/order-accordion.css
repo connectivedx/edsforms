@@ -52,9 +52,6 @@
   gap: var(--standard-margin);
   margin-top: var(--standard-margin);
 }
-.test-details.show {
-  display: flex;
-}
 .test-header {
   display: flex;
   flex-direction: column;
@@ -63,6 +60,9 @@
   border-radius: 0.25rem;
   box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.2);
   padding: var(--standard-margin);
+}
+.test-package.show .test-details {
+  display: flex;
 }
 #test-package-list {
   display: flex;
