@@ -59,7 +59,7 @@ h3 {
   justify-content: center;
 }
 .order-buttons {
-  display: flex;
+  display: none;
   justify-content: flex-end;
 }
 .plus {
@@ -102,6 +102,9 @@ h3 {
 }
 .test-package.show .description-column {
   display: none;
+}
+.test-package.show .order-buttons {
+  display: flex;
 }
 .test-package.show .test-details {
   display: flex;
