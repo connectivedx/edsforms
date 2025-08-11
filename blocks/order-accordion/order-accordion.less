@@ -41,6 +41,10 @@ button {
   font-weight: 700;
 }
 
+h3 {
+  font-size: inherit;
+}
+
 .package-benefit {
   color: rgb(105, 118, 133);
   display: flex;
@@ -122,9 +126,10 @@ button {
     .description-column {
       display: none;
     }
-  }
-  .test-details {
-    display: flex;
+
+    .test-details {
+      display: flex;
+    }
   }
 }
 
@@ -133,6 +138,7 @@ button {
   flex-direction: column;
   gap: var(--standard-margin);
   list-style: none;
+  padding: 0;
 }
 
 .test-summary {
