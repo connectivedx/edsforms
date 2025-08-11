@@ -17,6 +17,10 @@
 .test-details.show {
   display: block;
 }
+.test-header {
+  display: flex;
+  flex-direction: column;
+}
 .test-package {
   border-radius: 0.25rem;
   box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.2);
@@ -44,4 +48,5 @@
   flex-direction: row;
   gap: 2rem;
   min-width: 40%;
+  padding-right: 2rem;
 }
