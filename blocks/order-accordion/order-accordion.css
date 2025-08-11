@@ -37,9 +37,6 @@
   color: #0172ce;
   font-size: 2rem;
 }
-.test-title > span {
-  display: block;
-}
 .title-column {
   align-items: center;
   border-right: 1px solid lightgray;

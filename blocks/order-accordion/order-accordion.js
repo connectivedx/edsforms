@@ -6,8 +6,10 @@ export default function decorate(block) {
                 <div class="test-package">
                     <div class="test-summary">
                         <div class="title-column">
-                            <span class="test-title">MyRisk <span class="reg-mark">&reg;</span></span>
-                            <span class="test-description">Hereditary Cancer Test</span>
+                            <div class="test-header">
+                                <span class="test-title">MyRisk <span class="reg-mark">&reg;</span></span>
+                                <span class="test-description">Hereditary Cancer Test</span>
+                            </div>
                         </div>
                         <div class="description-column">
                             <span class="test-description">A multi-gene hereditary cancer panel that helps determine the risk of certain cancers, with a focus on 11 primary indications.</span>
@@ -28,8 +30,10 @@ export default function decorate(block) {
                 <div class="test-package">
                     <div class="test-summary">
                         <div class="title-column">
-                            <span class="test-title">Foresight <span class="reg-mark">&reg;</span></span>
-                            <span class="test-description">Carrier Screen</span>
+                            <div class="test-header">
+                                <span class="test-title">Foresight <span class="reg-mark">&reg;</span></span>
+                                <span class="test-description">Carrier Screen</span>
+                            </div>
                         </div>
                         <div class="description-column">
                             <span class="test-description">Determine if parents are at an increased risk of passing inherited conditions to children, such as Cystic Fibrosis.</span>
@@ -50,8 +54,10 @@ export default function decorate(block) {
                 <div class="test-package">
                     <div class="test-summary">
                         <div class="title-column">
-                            <span class="test-title">Prequel <span class="reg-mark">&reg;</span></span>
-                            <span class="test-description">Prenatal Screen</span>
+                            <div class="test-header">
+                                <span class="test-title">Prequel <span class="reg-mark">&reg;</span></span>
+                                <span class="test-description">Prenatal Screen</span>
+                            </div>
                         </div>
                         <div class="description-column">
                             <span class="test-description">Determine a risk of a fetus</span>
@@ -118,12 +124,12 @@ export default function decorate(block) {
                 <div class="test-package">
                     <div class="test-summary">
                         <div class="title-column">
-                            <div class="test-title">
+                            <div class="test-header">
                                 <span class="test-title">Foresight <span class="reg-mark">&reg;</span></span>
                                 <span class="test-description">Carrier Screening</span>
                             </div>
                             <span class="plus">+</span>
-                            <div class="test-title">
+                            <div class="test-header">
                                 <span class="test-title">Prequel <span class="reg-mark">&reg;</span></span>
                                 <span class="test-description">Prenatal Screen</span>
                             </div> 
