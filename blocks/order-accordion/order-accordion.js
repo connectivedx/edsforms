@@ -154,12 +154,14 @@ export default function decorate(block) {
 
   block.innerHTML = markup;
 
-  document.getElementsByClassName("details-toggle").forEach((button) => {
+  const toggleButtons = document.getElementsByClassName("details-toggle");
+
+  for (const button of toggleButtons) {
     button.addEventListener("click", () => {
       const details = button
         .closest(".test-package")
         .querySelector(".test-details");
       details.classList.toggle("show");
     });
-  });
+  }
 }
