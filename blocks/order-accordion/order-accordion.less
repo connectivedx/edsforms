@@ -4,6 +4,11 @@
   --standard-margin: 2rem;
 }
 
+.benefits-container {
+  display: flex;
+  gap: 3rem;
+}
+
 .detail-column {
   padding: var(--standard-margin);
   width: 50%;
@@ -24,6 +29,8 @@
 
 .package-benefit {
   color: rgb(105, 118, 133);
+  display: flex;
+  gap: 0.25rem;
 
   .benefit-description {
     font-size: 1rem;
@@ -31,10 +38,17 @@
 
   .icon {
     background-color: white;
-    border-color: rgb(105, 118, 133);
-    border-radius: 2rem;
+    border-color: #697685;
+    border-width: 2px;
+    border-radius: 50px;
     margin-right: 0.5rem;
     text-align: center;
+    display: inline-flex;
+    width: 3rem;
+    height: 3rem;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
   }
 }
 
