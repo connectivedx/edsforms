@@ -6,7 +6,7 @@ export default function decorate(block) {
                 <div class="test-package">
                     <div class="test-summary">
                         <div class="title-column">
-                            <span class="test-title">MyRisk &reg;</span>
+                            <span class="test-title">MyRisk <span class="reg-mark">&reg;</span></span>
                             <span class="test-description">Hereditary Cancer Test</span>
                         </div>
                         <div class="description-column">
@@ -28,7 +28,7 @@ export default function decorate(block) {
                 <div class="test-package">
                     <div class="test-summary">
                         <div class="title-column">
-                            <span class="test-title">Foresight &reg;</span>
+                            <span class="test-title">Foresight <span class="reg-mark">&reg;</span></span>
                             <span class="test-description">Carrier Screen</span>
                         </div>
                         <div class="description-column">
@@ -50,7 +50,7 @@ export default function decorate(block) {
                 <div class="test-package">
                     <div class="test-summary">
                         <div class="title-column">
-                            <span class="test-title">Prequel &reg;</span>
+                            <span class="test-title">Prequel <span class="reg-mark">&reg;</span></span>
                             <span class="test-description">Prenatal Screen</span>
                         </div>
                         <div class="description-column">
@@ -119,12 +119,12 @@ export default function decorate(block) {
                     <div class="test-summary">
                         <div class="title-column">
                             <div class="test-title">
-                                <span class="test-title">Foresight &reg;</span>
+                                <span class="test-title">Foresight <span class="reg-mark">&reg;</span></span>
                                 <span class="test-description">Carrier Screening</span>
                             </div>
                             <span class="plus">+</span>
                             <div class="test-title">
-                                <span class="test-title">Prequel &reg;</span>
+                                <span class="test-title">Prequel <span class="reg-mark">&reg;</span></span>
                                 <span class="test-description">Prenatal Screen</span>
                             </div> 
                         </div>

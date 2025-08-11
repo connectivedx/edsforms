@@ -3,6 +3,13 @@
 
 .plus {
   color: purple;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.reg-mark {
+  font-size: 1rem;
+  vertical-align: super;
 }
 
 .test-description {
@@ -40,11 +47,17 @@
 .test-title {
   color: rgb(1, 114, 206);
   font-size: 2rem;
+
+  > span {
+    display: block;
+  }
 }
 
 .title-column {
+  align-items: center;
   border-right: 1px solid lightgray;
   display: flex;
-  flex-direction: column;
-  min-width: 30%;
+  flex-direction: row;
+  gap: 2rem;
+  min-width: 40%;
 }
