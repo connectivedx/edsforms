@@ -17,10 +17,10 @@ export default function decorate(block) {
                         <button class="details-toggle"><span class="icon arrow-up"></span></button>
                     </div>
                     <div class="test-details">
-                        <div class="detail-column">
+                        <div class="detail-column detail-info">
                             <span class="test-detail">Detail 1</span>
                         </div>
-                        <div class="detail-column">
+                        <div class="detail-column detail-options">
                             <span class="test-detail">Detail 2</span>
                         </div>
                     </div>
@@ -41,10 +41,10 @@ export default function decorate(block) {
                         <button class="details-toggle"><span class="icon arrow-up"></span></button>
                     </div>
                     <div class="test-details">
-                        <div class="detail-column">
+                        <div class="detail-column detail-info">
                             <span class="test-detail">Detail 1</span>
                         </div>
-                        <div class="detail-column">
+                        <div class="detail-column detail-options">
                             <span class="test-detail">Detail 2</span>
                         </div>
                     </div>
@@ -65,7 +65,7 @@ export default function decorate(block) {
                         <button class="details-toggle"><span class="icon arrow-up"></span></button>
                     </div>
                     <div class="test-details">
-                        <div class="detail-column">
+                        <div class="detail-column detail-info">
                             <p>Prequel &reg; Prenatal Screening</p>
                             <p>A prenatal Cell Free DNA (pcfDNA) screen that can determine if a pregnancy is at an increased risk for chromosomal conditions like Down, Edwards or Patau syndromes, and provides the predicated fetal sex.</p>
                             <p>When to test: 8 weeks pregnant</p>
@@ -85,7 +85,7 @@ export default function decorate(block) {
                                 <span class="icon report">Sample Report</span>
                             </div>
                         </div>
-                        <div class="detail-column">
+                        <div class="detail-column detail-options">
                         <div>* Required information</div>
                             <p>Included</p>
                             <ul>
@@ -140,10 +140,10 @@ export default function decorate(block) {
                         <button class="details-toggle"><span class="icon arrow-up"></span></button>
                     </div>
                     <div class="test-details">
-                        <div class="detail-column">
+                        <div class="detail-column detail-info">
                             <span class="test-detail">Detail 1</span>
                         </div>
-                        <div class="detail-column">
+                        <div class="detail-column detail-options">
                             <span class="test-detail">Detail 2</span>
                         </div>
                     </div>

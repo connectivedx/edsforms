@@ -1,3 +1,10 @@
+:root {
+  --blue: #0172ce;
+  --pink: #f6f3ff;
+}
+.detail-info {
+  background-color: var(--pink);
+}
 .plus {
   color: purple;
   font-size: 1.5rem;
@@ -38,7 +45,7 @@
   gap: 2rem;
 }
 .test-title {
-  color: #0172ce;
+  color: var(--blue);
   font-size: 2rem;
 }
 .title-column {
