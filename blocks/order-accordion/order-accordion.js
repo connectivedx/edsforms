@@ -122,13 +122,12 @@ export default function decorate(block) {
                                         <label for="eaa">Expanded Aneuploidy Analysis (EAA) <span class="icon info"></span></label>
                                     </div>
                                 </div>
-                                <div class="order-buttons">
-                                    <button class="button-add" type="button">Add to order</button>
-                                    <button class="button-order" type="submit">Order now</button>
-                                </div>
                             </form>
-
                         </div>
+                    </div>
+                    <div class="order-buttons">
+                        <button class="button-add" type="button">Add to order</button>
+                        <button class="button-order" type="submit">Order now</button>
                     </div>
                 </div>
             </li>

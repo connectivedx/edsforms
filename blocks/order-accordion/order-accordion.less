@@ -1,6 +1,7 @@
 :root {
   --blue: rgb(1, 114, 206);
   --pink: rgb(246, 243, 255);
+  --shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.2);
   --standard-margin: 2rem;
 }
 
@@ -18,7 +19,7 @@ button {
   &.button-order {
     background-color: var(--blue);
     border-radius: 0.25rem;
-    box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow);
     color: white;
   }
 }
@@ -119,7 +120,7 @@ h3 {
 
 .test-package {
   border-radius: 0.25rem;
-  box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow);
   padding: var(--standard-margin);
 
   &.show {
@@ -129,6 +130,10 @@ h3 {
 
     .test-details {
       display: flex;
+    }
+
+    .title-column {
+      border-color: white;
     }
   }
 }

@@ -1,6 +1,7 @@
 :root {
   --blue: #0172ce;
   --pink: #f6f3ff;
+  --shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.2);
   --standard-margin: 2rem;
 }
 .benefits-container {
@@ -14,7 +15,7 @@ button.button-add {
 button.button-order {
   background-color: var(--blue);
   border-radius: 0.25rem;
-  box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow);
   color: white;
 }
 .detail-column {
@@ -96,7 +97,7 @@ h3 {
 }
 .test-package {
   border-radius: 0.25rem;
-  box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow);
   padding: var(--standard-margin);
 }
 .test-package.show .description-column {
@@ -104,6 +105,9 @@ h3 {
 }
 .test-package.show .test-details {
   display: flex;
+}
+.test-package.show .title-column {
+  border-color: white;
 }
 #test-package-list {
   display: flex;
