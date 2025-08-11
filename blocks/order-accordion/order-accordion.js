@@ -66,23 +66,25 @@ export default function decorate(block) {
                     </div>
                     <div class="test-details">
                         <div class="detail-column detail-info">
-                            <p>Prequel &reg; Prenatal Screening</p>
+                            <p class="detail-title">Prequel &reg; Prenatal Screening</p>
                             <p>A prenatal Cell Free DNA (pcfDNA) screen that can determine if a pregnancy is at an increased risk for chromosomal conditions like Down, Edwards or Patau syndromes, and provides the predicated fetal sex.</p>
-                            <p>When to test: 8 weeks pregnant</p>
+                            <p><strong>When to test:</strong> 8 weeks pregnant</p>
                             <ul>
                                 <li>&checkmark; 1 blood sample</li>
                                 <li>&checkmark; 7-10 days turnaround time</li>
                             </ul>
-                            <div class="package-benefit">
-                                <div class="icon">$0</div>
-                                <div class="benefit-description">Most patients are covered by insurance and pay $0.</div>
-                            </div>
-                            <div class="package-benefit">
-                                <div class="icon"></div>
-                                <div class="benefit-description">Direct payment options and financial assistance are available for qualified individuals.</div>
+                            <div class="benefits-container">
+                                <div class="package-benefit">
+                                    <div class="icon">$0</div>
+                                    <div class="benefit-description">Most patients are covered by insurance and pay $0.</div>
+                                </div>
+                                <div class="package-benefit">
+                                    <div class="icon"></div>
+                                    <div class="benefit-description">Direct payment options and financial assistance are available for qualified individuals.</div>
+                                </div>
                             </div>
                             <div class="sample-report">
-                                <span class="icon report">Sample Report</span>
+                                <span class="icon report"></span>Sample Report
                             </div>
                         </div>
                         <div class="detail-column detail-options">
@@ -158,10 +160,8 @@ export default function decorate(block) {
 
   for (const button of toggleButtons) {
     button.addEventListener("click", () => {
-      const details = button
-        .closest(".test-package")
-        .querySelector(".test-details");
-      details.classList.toggle("show");
+      const testPackageContainer = button.closest(".test-package");
+      testPackageContainer.classList.toggle("show");
     });
   }
 }

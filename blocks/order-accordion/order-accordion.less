@@ -1,13 +1,41 @@
 :root {
   --blue: rgb(1, 114, 206);
   --pink: rgb(246, 243, 255);
+  --standard-margin: var(--standard-margin);
+}
+
+.detail-column {
+  padding: var(--standard-margin);
+  width: 50%;
 }
 
 .detail-info {
   background-color: var(--pink);
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
 }
 
-#order-accordion {
+.detail-title {
+  font-weight: 700;
+}
+
+.package-benefit {
+  color: rgb(105, 118, 133);
+
+  .benefit-description {
+    font-size: 1rem;
+  }
+
+  .icon {
+    background-color: white;
+    border-color: rgb(105, 118, 133);
+    border-radius: 2rem;
+    margin-right: 0.5rem;
+    text-align: center;
+  }
 }
 
 .plus {
@@ -21,6 +49,11 @@
   vertical-align: super;
 }
 
+.sample-report {
+  color: var(--blue);
+  font-weight: 700;
+}
+
 .test-description {
   color: gray;
   font-size: 0.8rem;
@@ -28,9 +61,11 @@
 
 .test-details {
   display: none;
+  gap: var(--standard-margin);
+  margin-top: var(--standard-margin);
 
   &.show {
-    display: block;
+    display: flex;
   }
 }
 
@@ -42,25 +77,25 @@
 .test-package {
   border-radius: 0.25rem;
   box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.2);
-  padding: 2rem;
+  padding: var(--standard-margin);
 }
 
 #test-package-list {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--standard-margin);
   list-style: none;
 }
 
 .test-summary {
   align-items: center;
   display: flex;
-  gap: 2rem;
+  gap: var(--standard-margin);
 }
 
 .test-title {
   color: var(--blue);
-  font-size: 2rem;
+  font-size: var(--standard-margin);
 }
 
 .title-column {
@@ -68,7 +103,7 @@
   border-right: 1px solid lightgray;
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: var(--standard-margin);
   min-width: 40%;
-  padding-right: 2rem;
+  padding-right: var(--standard-margin);
 }
