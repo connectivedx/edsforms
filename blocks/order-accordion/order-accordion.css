@@ -1,5 +1,11 @@
 .plus {
   color: purple;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.reg-mark {
+  font-size: 1rem;
+  vertical-align: super;
 }
 .test-description {
   color: gray;
@@ -26,15 +32,19 @@
   align-items: center;
   display: flex;
   gap: 2rem;
-  justify-content: space-between;
 }
 .test-title {
-  color: blue;
-  font-size: 3rem;
+  color: #0172ce;
+  font-size: 2rem;
+}
+.test-title > span {
+  display: block;
 }
 .title-column {
+  align-items: center;
   border-right: 1px solid lightgray;
   display: flex;
-  flex-direction: column;
-  min-width: 30%;
+  flex-direction: row;
+  gap: 2rem;
+  min-width: 40%;
 }
