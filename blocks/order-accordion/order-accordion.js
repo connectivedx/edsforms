@@ -88,7 +88,7 @@ export default function decorate(block) {
                             </div>
                         </div>
                         <div class="detail-column detail-options">
-                        <div>* Required information</div>
+                        <div><span class="red">*</span> Required information</div>
                             <p>Included</p>
                             <ul>
                                 <li>&checkmark; Chromasome 13 (Patau syndrome)</li>
@@ -97,7 +97,7 @@ export default function decorate(block) {
                             </ul>
                             <form>
                                 <div>
-                                    <p>Pregnancy Type *</p>
+                                    <p>Pregnancy Type <span class="red">*</span></p>
                                     <input type="radio" id="singleton" name="pregnancy-type" value="singleton">
                                     <label for="singleton">Singleton</label><br>
                                     <input type="radio" id="multiples" name="pregnancy-type" value="multiples">
@@ -112,9 +112,9 @@ export default function decorate(block) {
                                     <input type="checkbox" id="eaa" name="additions" value="eaa">
                                     <label for="eaa">Expanded Aneuploidy Analysis (EAA) <span class="icon info"></span></label>
                                 </div>
-                                <div>
-                                    <button type="button">Add to order</button>
-                                    <button type="submit">Order now</button>
+                                <div class="order-buttons">
+                                    <button class="button-add" type="button">Add to order</button>
+                                    <button class="button-order" type="submit">Order now</button>
                                 </div>
                             </form>
 

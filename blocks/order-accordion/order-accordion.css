@@ -7,16 +7,25 @@
   display: flex;
   gap: 3rem;
 }
+button.button-add {
+  background-color: white;
+  color: var(--blue);
+}
+button.button-order {
+  background-color: var(--blue);
+  border-radius: 0.25rem;
+  box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.2);
+  color: white;
+}
 .detail-column {
   padding: var(--standard-margin);
   width: 50%;
 }
+.detail-column > * + * {
+  margin-top: 1rem;
+}
 .detail-info {
   background-color: var(--pink);
-}
-.detail-info ul {
-  list-style: none;
-  padding: 0;
 }
 .detail-title {
   font-weight: 700;
@@ -25,6 +34,7 @@
   color: #697685;
   display: flex;
   gap: 0.25rem;
+  width: 50%;
 }
 .package-benefit .benefit-description {
   font-size: 1rem;
@@ -48,6 +58,9 @@
   font-size: 1.5rem;
   font-weight: 500;
 }
+.red {
+  color: red;
+}
 .reg-mark {
   font-size: 1rem;
   vertical-align: super;
@@ -64,6 +77,10 @@
   display: none;
   gap: var(--standard-margin);
   margin-top: var(--standard-margin);
+}
+.test-details ul {
+  list-style: none;
+  padding: 0;
 }
 .test-header {
   display: flex;
