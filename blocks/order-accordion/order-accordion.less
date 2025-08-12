@@ -1,9 +1,17 @@
 :root {
   --blue: rgb(1, 114, 206);
+  --button-radius: 0.25rem;
   --gray: rgb(139, 149, 154);
+  --lightgray: rgb(223, 223, 223);
   --pink: rgb(246, 243, 255);
   --shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.2);
   --standard-margin: 2rem;
+}
+
+button.continue {
+  background-color: var(--lightgray);
+  border-radius: var(--button-radius);
+  color: inherit;
 }
 
 header .nav-wrapper:after {
@@ -32,7 +40,7 @@ button {
 
   &.button-order {
     background-color: var(--blue);
-    border-radius: 0.25rem;
+    border-radius: var(--button-radius);
     box-shadow: var(--shadow);
     color: white;
   }
@@ -102,6 +110,12 @@ h3 {
   }
 }
 
+#order-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--standard-margin);
+}
+
 .order-buttons {
   display: none;
   justify-content: flex-end;
@@ -131,6 +145,11 @@ h3 {
   font-weight: 700;
 }
 
+.selected-amount {
+  color: var(--gray);
+  text-align: right;
+}
+
 .test-description {
   color: gray;
   font-size: 0.8rem;
@@ -154,7 +173,7 @@ h3 {
 
 .test-package {
   background-color: white;
-  border-radius: 0.25rem;
+  border-radius: var(--button-radius);
   box-shadow: var(--shadow);
   padding: var(--standard-margin);
 
@@ -180,8 +199,9 @@ h3 {
 #test-package-list {
   display: flex;
   flex-direction: column;
-  gap: var(--standard-margin);
+  gap: var(--standard-margin) / 2;
   list-style: none;
+  margin-top: 0;
   padding: 0;
 }
 
