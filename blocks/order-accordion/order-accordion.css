@@ -1,5 +1,6 @@
 :root {
   --blue: #0172ce;
+  --gray: #8b959a;
   --pink: #f6f3ff;
   --shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.2);
   --standard-margin: 2rem;
@@ -29,6 +30,9 @@ button.button-order {
   box-shadow: var(--shadow);
   color: white;
 }
+.description-column {
+  width: 100%;
+}
 .detail-column {
   padding: var(--standard-margin);
   width: 50%;
@@ -45,6 +49,10 @@ button.button-order {
 }
 h3 {
   font-size: inherit;
+}
+.icon.info {
+  background-color: var(--gray);
+  color: white;
 }
 .package-benefit {
   color: #697685;
@@ -80,6 +88,9 @@ h3 {
 }
 .required {
   color: red;
+}
+.requirement {
+  text-align: right;
 }
 .reg-mark {
   font-size: 1rem;
@@ -139,7 +150,7 @@ h3 {
 }
 .test-title {
   color: var(--blue);
-  font-size: var(--standard-margin);
+  font-size: 2rem;
 }
 .title-column {
   align-items: center;
