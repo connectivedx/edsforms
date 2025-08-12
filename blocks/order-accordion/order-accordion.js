@@ -111,18 +111,15 @@ export default function decorate(block) {
                                     <h3>Additions (optional)</h3>
                                     <div>
                                         <input type="checkbox" id="sca" name="additions" value="sca">
-                                        <label for="sca">Sex chromasome analysis <span class="icon info"></span></label>
-                                        <span class="icon info">i</span>
+                                        <label for="sca">Sex chromasome analysis <span class="icon info">i</span></label>
                                     </div>
                                     <div>
                                         <input type="checkbox" id="microdeletions" name="additions" value="microdeletions">
-                                        <label for="microdeletions">Microdeletions <span class="icon info"></span></label>
-                                        <span class="icon info">i</span>
+                                        <label for="microdeletions">Microdeletions <span class="icon info">i</span></label>
                                     </div>
                                     <div>
                                         <input type="checkbox" id="eaa" name="additions" value="eaa">
-                                        <label for="eaa">Expanded Aneuploidy Analysis (EAA) <span class="icon info"></span></label>
-                                        <span class="icon info">i</span>
+                                        <label for="eaa">Expanded Aneuploidy Analysis (EAA) <span class="icon info">i</span></label>
                                     </div>
                                 </div>
                             </form>
