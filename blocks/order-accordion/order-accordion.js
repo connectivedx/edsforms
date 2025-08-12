@@ -1,4 +1,6 @@
 export default function decorate(block) {
+  const selectedPackagesArray = [];
+
   const markup = `
     <div id="order-accordion">
         <div id="list-filter" class="custom-dropdown">
@@ -15,7 +17,7 @@ export default function decorate(block) {
         </div>
         <ul id="test-package-list">
             <li>
-                <div class="test-package">
+                <div class="test-package" name="MyRisk">
                     <div class="test-summary">
                         <div class="title-column">
                             <div class="test-header">
@@ -39,7 +41,7 @@ export default function decorate(block) {
                 </div>
             </li>
             <li>
-                <div class="test-package">
+                <div class="test-package" name="Foresight">
                     <div class="test-summary">
                         <div class="title-column">
                             <div class="test-header">
@@ -63,7 +65,7 @@ export default function decorate(block) {
                 </div>
             </li>
             <li>
-                <div class="test-package">
+                <div class="test-package" name="Prequel">
                     <div class="test-summary">
                         <div class="title-column">
                             <div class="test-header">
@@ -144,7 +146,7 @@ export default function decorate(block) {
                 </div>
             </li>
             <li>
-                <div class="test-package">
+                <div class="test-package" name="Foresight+Prequel">
                     <div class="test-summary">
                         <div class="title-column">
                             <div class="test-header">
@@ -198,7 +200,9 @@ export default function decorate(block) {
       document.querySelector("#list-filter").classList.toggle("show");
     });
 
-  const filterOptions = document.querySelector("#list-filter .filter-option");
+  const filterOptions = document.querySelectorAll(
+    "#list-filter .filter-option"
+  );
 
   for (const option of filterOptions) {
     option.addEventListener("click", function () {
@@ -229,4 +233,17 @@ export default function decorate(block) {
       }
     }
   );
+
+  function updateSelectedAmount() {
+    const selectedAmount = document.querySelector(".selected-amount");
+    selectedAmount.querySelector("span").textContent =
+      selectedPackagesArray.length;
+  }
+
+  document.body.addEventListener("click", "button.button-add", function () {
+    const testPackage = this.closest(".test-package");
+    const packageName = testPackage.getAttribute("name");
+    selectedPackagesArray.push(packageName);
+    updateSelectedAmount();
+  });
 }
