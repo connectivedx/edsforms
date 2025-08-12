@@ -16,25 +16,6 @@
     ]
   },
   {
-    "id": "quote",
-    "fields": [
-      {
-        "component": "richtext",
-        "name": "quote",
-        "value": "",
-        "label": "Quote",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "author",
-        "label": "Author",
-        "value": ""
-      }
-    ]
-  },
-  {
     "id": "title",
     "fields": [
       {
@@ -4851,6 +4832,117 @@
     ]
   },
   {
+    "id": "wizard-extended",
+    "fields": [
+      {
+        "component": "text",
+        "name": "name",
+        "label": "Name",
+        "valueType": "string",
+        "required": true,
+        "valueFormat": "regexp",
+        "validation": {
+          "regExp": "^[^$].*",
+          "customErrorMsg": "Name cannot start with $"
+        }
+      },
+      {
+        "component": "text",
+        "name": "jcr:title",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "group",
+        "name": "settings",
+        "label": "Settings",
+        "fields": [
+          {
+            "component": "checkbox-group",
+            "name": "displaySettings",
+            "label": "Display Settings",
+            "options": [
+              {
+                "name": "Hide title",
+                "value": "hideTitle"
+              },
+              {
+                "name": "Show Component",
+                "value": "visible"
+              },
+              {
+                "name": "Enable Component",
+                "value": "enabled"
+              },
+              {
+                "name": "Read-only",
+                "value": "readOnly"
+              }
+            ]
+          },
+          {
+            "component": "datasource-bindref",
+            "name": "dataRef",
+            "label": "Bind reference",
+            "valueType": "string"
+          }
+        ]
+      },
+      {
+        "component": "group",
+        "name": "layoutHelp",
+        "label": "Layout & Help",
+        "fields": [
+          {
+            "component": "select",
+            "name": "colspan",
+            "label": "Column Span",
+            "valueType": "string",
+            "value": "12",
+            "options": [
+              {
+                "name": "1 column",
+                "value": "1"
+              },
+              {
+                "name": "2 column",
+                "value": "2"
+              },
+              {
+                "name": "3 column",
+                "value": "3"
+              },
+              {
+                "name": "4 column",
+                "value": "4"
+              },
+              {
+                "name": "6 column",
+                "value": "6"
+              },
+              {
+                "name": "12 column",
+                "value": "12"
+              }
+            ]
+          },
+          {
+            "component": "richtext",
+            "name": "description",
+            "label": "Help text",
+            "valueType": "string"
+          },
+          {
+            "component": "richtext",
+            "name": "tooltip",
+            "label": "Short description",
+            "valueType": "string"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "wizard",
     "fields": [
       {
@@ -5034,6 +5126,21 @@
   },
   {
     "id": "order-accordion",
-    "fields": []
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
   }
 ]
