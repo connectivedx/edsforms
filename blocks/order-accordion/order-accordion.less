@@ -14,6 +14,27 @@ button.continue {
   color: inherit;
 }
 
+button.filter-option {
+  background-color: transparent;
+  color: black;
+  font-weight: 400;
+  width: 100%;
+  text-align: left;
+  padding: 0;
+  border-radius: 0;
+  line-height: 3rem;
+  margin: 0;
+}
+
+#current-selection {
+  border-bottom: 1px solid black;
+}
+
+#filter-options {
+  background-color: var(--lightgray);
+  display: none;
+}
+
 header .nav-wrapper:after {
   background: linear-gradient(90deg, rgb(172, 84, 79), rgb(13, 105, 197));
   content: "";
@@ -82,6 +103,10 @@ h3 {
   height: 1.2em;
   width: 1.2em;
   font-weight: 700;
+}
+
+#list-filter {
+  width: 33vw;
 }
 
 .package-benefit {

@@ -181,12 +181,30 @@ export default function decorate(block) {
 
   block.innerHTML = markup;
 
+  // accordion functionality
   const toggleButtons = document.getElementsByClassName("details-toggle");
 
   for (const button of toggleButtons) {
     button.addEventListener("click", () => {
       const testPackageContainer = button.closest(".test-package");
       testPackageContainer.classList.toggle("show");
+    });
+  }
+
+  // custom dropdown functionality
+  document
+    .querySelector("#current-selection")
+    .addEventListener("click", function () {
+      document.querySelector("#list-filter").classList.toggle("show");
+    });
+
+  const filterOptions = document.querySelector("#list-filter .filter-option");
+
+  for (const option of filterOptions) {
+    option.addEventListener("click", function () {
+      document.querySelector("#current-selection").textContent =
+        this.textContent;
+      document.querySelector("#list-filter").classList.remove("show");
     });
   }
 }
