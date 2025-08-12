@@ -787,3 +787,37 @@ main div.form-wrapper {
         margin: 0;
     }
 }
+
+/* ===== Wizard Extended Styling ===== */
+.wizard-step-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  border: none;
+  padding: 0;
+}
+
+.wizard-step-option {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.wizard-step-option input[type="radio"] {
+  accent-color: #0073e6; /* Match brand blue */
+  width: 1rem;
+  height: 1rem;
+}
+
+.wizard-step-option input[type="radio"]:focus-visible {
+  outline: 2px solid #005bb5; /* Accessible focus */
+  outline-offset: 2px;
+}
+
+.wizard-step-option input[type="radio"]:disabled + label {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

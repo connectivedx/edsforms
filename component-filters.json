@@ -8,18 +8,16 @@
   {
     "id": "section",
     "components": [
+      "text",
+      "image",
       "button",
+      "title",
+      "hero",
       "cards",
       "columns",
-      "embed-adaptive-form",
-      "form",
       "fragment",
-      "hero",
-      "image",
-      "order-accordion",
-      "quote",
-      "text",
-      "title"
+      "form",
+      "embed-adaptive-form"
     ]
   },
   {
@@ -69,7 +67,14 @@
       "telephone-input",
       "text-input",
       "tnc",
-      "wizard"
+      "wizard",
+      "wizard-extended"
+    ]
+  },
+  {
+    "id": "section",
+    "components": [
+      "order-accordion"
     ]
   }
 ]
