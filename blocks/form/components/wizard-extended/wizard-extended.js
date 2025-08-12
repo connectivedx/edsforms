@@ -39,7 +39,9 @@ export class WizardExtendedLayout extends BaseWizardLayout {
 
             // Sync radios
             const radios = panel.querySelectorAll('input[name="wizard-step"]');
-            radios.forEach((r, i) => r.checked = i === index);
+            radios.forEach((r, i) => {
+              r.checked = i === index;
+            });
 
             // Dispatch navigation event
             const event = new CustomEvent('wizard:navigate', {
@@ -57,8 +59,8 @@ export class WizardExtendedLayout extends BaseWizardLayout {
       label.appendChild(input);
       label.appendChild(
         document.createTextNode(
-          child.querySelector('legend')?.textContent || `Step ${index + 1}`
-        )
+          child.querySelector('legend')?.textContent || `Step ${index + 1}`,
+        ),
       );
 
       fieldset.appendChild(label);
