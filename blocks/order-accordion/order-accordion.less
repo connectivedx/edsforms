@@ -89,6 +89,10 @@ button {
   font-weight: 700;
 }
 
+#filter-list {
+  font-size: 0.8rem;
+}
+
 h3 {
   font-size: inherit;
 }
@@ -106,7 +110,22 @@ h3 {
 }
 
 #list-filter {
+  line-height: 2.5rem;
   width: 33vw;
+
+  .filter-option {
+    padding: 0 0.5rem;
+  }
+
+  .filter-option + .filter-option {
+    border-top: 1px solid var(--gray);
+  }
+
+  &.show {
+    #filter-options {
+      display: block;
+    }
+  }
 }
 
 .package-benefit {
