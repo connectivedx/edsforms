@@ -1,0 +1,40 @@
+{
+  "title": "Prequel",
+  "regMark": true,
+  "subtitle": "Prenatal Screen",
+  "summary": "Determine a risk of a fetus",
+  "detailsTitle": "Prequel ® Prenatal Screening",
+  "detailsDescription": "A prenatal Cell Free DNA (pcfDNA) screen that can determine if a pregnancy is at an increased risk for chromosomal conditions like Down, Edwards or Patau syndromes, and provides the predicated fetal sex.",
+  "whenToTest": "8 weeks pregnant",
+  "features": [
+    "1 blood sample",
+    "7-10 days turnaround time"
+  ],
+  "benefits": [
+    {
+      "icon": "$0",
+      "description": "Most patients are covered by insurance and pay $0."
+    },
+    {
+      "icon": "",
+      "description": "Direct payment options and financial assistance are available for qualified individuals."
+    }
+  ],
+  "sampleReport": "Sample Report",
+  "included": [
+    "Chromasome 13 (Patau syndrome)",
+    "Chromasome 18 (Edwards syndrome)",
+    "Chromasome 21 (Down syndrome)"
+  ],
+  "form": {
+    "pregnancyTypes": [
+      { "id": "singleton", "label": "Singleton" },
+      { "id": "multiples", "label": "Twins/higher order multiples" }
+    ],
+    "additions": [
+      { "id": "sca", "label": "Sex chromasome analysis" },
+      { "id": "microdeletions", "label": "Microdeletions" },
+      { "id": "eaa", "label": "Expanded Aneuploidy Analysis (EAA)" }
+    ]
+  }
+}
