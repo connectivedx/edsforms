@@ -161,7 +161,7 @@ h3 {
 #test-package-list {
   display: flex;
   flex-direction: column;
-  gap: var(--standard-margin) / 2;
+  gap: 1rem;
   list-style: none;
   margin-top: 0;
   padding: 0;
