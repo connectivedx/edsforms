@@ -217,4 +217,16 @@ export default function decorate(block) {
   document.body.addEventListener("click", function () {
     document.querySelector("#list-filter").classList.remove("show");
   });
+
+  document.body.addEventListener(
+    "click",
+    "#list-filter .filter-option",
+    function (e) {
+      if (e.target.matches("#list-filter .filter-option")) {
+        document.querySelector("#current-selection").textContent =
+          e.target.textContent;
+        document.querySelector("#list-filter").classList.remove("show");
+      }
+    }
+  );
 }
