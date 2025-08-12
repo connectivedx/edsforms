@@ -1,5 +1,6 @@
 :root {
   --blue: rgb(1, 114, 206);
+  --gray: rgb(139, 149, 154);
   --pink: rgb(246, 243, 255);
   --shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.2);
   --standard-margin: 2rem;
@@ -37,6 +38,10 @@ button {
   }
 }
 
+.description-column {
+  width: 100%;
+}
+
 .detail-column {
   padding: var(--standard-margin);
   width: 50%;
@@ -57,6 +62,14 @@ button {
 
 h3 {
   font-size: inherit;
+}
+
+.icon.info {
+  background-color: var(--gray);
+  border-radius: 1em;
+  color: white;
+  display: inline-block;
+  font-size: 1em;
 }
 
 .package-benefit {
@@ -98,6 +111,10 @@ h3 {
 
 .required {
   color: red;
+}
+
+.requirement {
+  text-align: right;
 }
 
 .reg-mark {
@@ -173,7 +190,7 @@ h3 {
 
 .test-title {
   color: var(--blue);
-  font-size: var(--standard-margin);
+  font-size: 2rem;
 }
 
 .title-column {
