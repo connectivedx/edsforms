@@ -72,6 +72,9 @@ button.button-order {
 .detail-title {
   font-weight: 700;
 }
+#filter-list {
+  font-size: 0.8rem;
+}
 h3 {
   font-size: inherit;
 }
@@ -87,7 +90,17 @@ h3 {
   font-weight: 700;
 }
 #list-filter {
+  line-height: 2.5rem;
   width: 33vw;
+}
+#list-filter .filter-option {
+  padding: 0 0.5rem;
+}
+#list-filter .filter-option + .filter-option {
+  border-top: 1px solid var(--gray);
+}
+#list-filter.show #filter-options {
+  display: block;
 }
 .package-benefit {
   color: #697685;

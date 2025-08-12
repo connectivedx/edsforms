@@ -207,4 +207,14 @@ export default function decorate(block) {
       document.querySelector("#list-filter").classList.remove("show");
     });
   }
+
+  document
+    .querySelector("#list-filter")
+    .addEventListener("click", function (e) {
+      e.stopPropagation();
+    });
+
+  document.body.addEventListener("click", function () {
+    document.querySelector("#list-filter").classList.remove("show");
+  });
 }
