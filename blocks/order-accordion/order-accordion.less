@@ -14,6 +14,27 @@ button.continue {
   color: inherit;
 }
 
+button.filter-option {
+  background-color: transparent;
+  color: black;
+  font-weight: 400;
+  width: 100%;
+  text-align: left;
+  padding: 0;
+  border-radius: 0;
+  line-height: 3rem;
+  margin: 0;
+}
+
+#current-selection {
+  border-bottom: 1px solid black;
+}
+
+#filter-options {
+  background-color: var(--lightgray);
+  display: none;
+}
+
 header .nav-wrapper:after {
   background: linear-gradient(90deg, rgb(172, 84, 79), rgb(13, 105, 197));
   content: "";
@@ -68,6 +89,10 @@ button {
   font-weight: 700;
 }
 
+#filter-list {
+  font-size: 0.8rem;
+}
+
 h3 {
   font-size: inherit;
 }
@@ -82,6 +107,25 @@ h3 {
   height: 1.2em;
   width: 1.2em;
   font-weight: 700;
+}
+
+#list-filter {
+  line-height: 2.5rem;
+  width: 33vw;
+
+  .filter-option {
+    padding: 0 0.5rem;
+  }
+
+  .filter-option + .filter-option {
+    border-top: 1px solid var(--gray);
+  }
+
+  &.show {
+    #filter-options {
+      display: block;
+    }
+  }
 }
 
 .package-benefit {

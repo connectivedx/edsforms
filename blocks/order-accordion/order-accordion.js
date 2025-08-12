@@ -181,6 +181,7 @@ export default function decorate(block) {
 
   block.innerHTML = markup;
 
+  // accordion functionality
   const toggleButtons = document.getElementsByClassName("details-toggle");
 
   for (const button of toggleButtons) {
@@ -189,4 +190,31 @@ export default function decorate(block) {
       testPackageContainer.classList.toggle("show");
     });
   }
+
+  // custom dropdown functionality
+  document
+    .querySelector("#current-selection")
+    .addEventListener("click", function () {
+      document.querySelector("#list-filter").classList.toggle("show");
+    });
+
+  const filterOptions = document.querySelector("#list-filter .filter-option");
+
+  for (const option of filterOptions) {
+    option.addEventListener("click", function () {
+      document.querySelector("#current-selection").textContent =
+        this.textContent;
+      document.querySelector("#list-filter").classList.remove("show");
+    });
+  }
+
+  document
+    .querySelector("#list-filter")
+    .addEventListener("click", function (e) {
+      e.stopPropagation();
+    });
+
+  document.body.addEventListener("click", function () {
+    document.querySelector("#list-filter").classList.remove("show");
+  });
 }
