@@ -1,46 +1,192 @@
-export default async function decorate(block) {
-    // Render the static filter and selected-amount UI
-    block.innerHTML = `
-        <div id="order-accordion">
-            <div id="list-filter" class="custom-dropdown">
-                <label id="filter-label">Specialty</label>
-                <div id="current-selection">Women's Health</div>
-                <div id="filter-options">
-                    <button class="filter-option">Men's Health</button>
-                    <button class="filter-option">Pediatric</button>
-                </div>
-            </div>
-            <div class="selected-amount">
-                <div><span class="selected-amount">0</span> selected</div>
-                <div><button class="continue">Continue ></button></div>
-            </div>
-            <ul id="test-package-list">
-                <!-- test-package blocks will be inserted here by Universal Editor -->
-            </ul>
-            <div class="selected-amount">
-                <div><span class="selected-amount">0</span> selected</div>
-                <div><button class="continue">Continue ></button></div>
+export default function decorate(block) {
+  const markup = `
+    <div id="order-accordion">
+        <div id="list-filter" class="custom-dropdown">
+            <label id="filter-label">Specialty</label>
+            <div id="current-selection">Women's Health</div>
+            <div id="filter-options">
+                <button class="filter-option">Men's Health</button>
+                <button class="filter-option">Pediatric</button>
             </div>
         </div>
-    `;
+        <div class="selected-amount">
+            <div><span class="selected-amount">0</span> selected</div>
+            <div><button class="continue">Continue ></button></div>
+        </div>
+        <ul id="test-package-list">
+            <li>
+                <div class="test-package">
+                    <div class="test-summary">
+                        <div class="title-column">
+                            <div class="test-header">
+                                <span class="test-title">MyRisk <span class="reg-mark">&reg;</span></span>
+                                <span class="test-description">Hereditary Cancer Test</span>
+                            </div>
+                        </div>
+                        <div class="description-column">
+                            <span class="test-description">A multi-gene hereditary cancer panel that helps determine the risk of certain cancers, with a focus on 11 primary indications.</span>
+                        </div>
+                        <button class="details-toggle"><span class="icon arrow-up"></span></button>
+                    </div>
+                    <div class="test-details">
+                        <div class="detail-column detail-info">
+                            <span class="test-detail">Detail 1</span>
+                        </div>
+                        <div class="detail-column detail-options">
+                            <span class="test-detail">Detail 2</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="test-package">
+                    <div class="test-summary">
+                        <div class="title-column">
+                            <div class="test-header">
+                                <span class="test-title">Foresight <span class="reg-mark">&reg;</span></span>
+                                <span class="test-description">Carrier Screen</span>
+                            </div>
+                        </div>
+                        <div class="description-column">
+                            <span class="test-description">Determine if parents are at an increased risk of passing inherited conditions to children, such as Cystic Fibrosis.</span>
+                        </div>
+                        <button class="details-toggle"><span class="icon arrow-up"></span></button>
+                    </div>
+                    <div class="test-details">
+                        <div class="detail-column detail-info">
+                            <span class="test-detail">Detail 1</span>
+                        </div>
+                        <div class="detail-column detail-options">
+                            <span class="test-detail">Detail 2</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="test-package">
+                    <div class="test-summary">
+                        <div class="title-column">
+                            <div class="test-header">
+                                <span class="test-title">Prequel <span class="reg-mark">&reg;</span></span>
+                                <span class="test-description">Prenatal Screen</span>
+                            </div>
+                        </div>
+                        <div class="description-column">
+                            <span class="test-description">Determine a risk of a fetus</span>
+                        </div>
+                        <button class="details-toggle"><span class="icon arrow-up"></span></button>
+                    </div>
+                    <div class="test-details">
+                        <div class="detail-column detail-info">
+                            <h3 class="detail-title">Prequel &reg; Prenatal Screening</h3>
+                            <p>A prenatal Cell Free DNA (pcfDNA) screen that can determine if a pregnancy is at an increased risk for chromosomal conditions like Down, Edwards or Patau syndromes, and provides the predicated fetal sex.</p>
+                            <p><strong>When to test:</strong> 8 weeks pregnant</p>
+                            <ul>
+                                <li>&checkmark; 1 blood sample</li>
+                                <li>&checkmark; 7-10 days turnaround time</li>
+                            </ul>
+                            <div class="benefits-container">
+                                <div class="package-benefit">
+                                    <div class="icon">$0</div>
+                                    <div class="benefit-description">Most patients are covered by insurance and pay $0.</div>
+                                </div>
+                                <div class="package-benefit">
+                                    <div class="icon"></div>
+                                    <div class="benefit-description">Direct payment options and financial assistance are available for qualified individuals.</div>
+                                </div>
+                            </div>
+                            <div class="sample-report">
+                                <span class="icon report"></span>Sample Report
+                            </div>
+                        </div>
+                        <div class="detail-column detail-options">
+                            <div class="requirement"><span class="required">*</span> Required information</div>
+                            <h3>Included</h3>
+                            <ul>
+                                <li>&checkmark; Chromasome 13 (Patau syndrome)</li>
+                                <li>&checkmark; Chromasome 18 (Edwards syndrome)</li>
+                                <li>&checkmark; Chromasome 21 (Down syndrome)</li>
+                            </ul>
+                            <form>
+                                <div>
+                                    <h3>Pregnancy Type <span class="required">*</span></h3>
+                                    <span>
+                                        <input type="radio" id="singleton" name="pregnancy-type" value="singleton">
+                                        <label for="singleton">Singleton</label>
+                                    </span>
+                                    <span>
+                                        <input type="radio" id="multiples" name="pregnancy-type" value="multiples">
+                                        <label for="multiples">Twins/higher order multiples</label>
+                                    </span>
+                                </div>
+                                <div>
+                                    <h3>Additions (optional)</h3>
+                                    <div>
+                                        <input type="checkbox" id="sca" name="additions" value="sca">
+                                        <label for="sca">Sex chromasome analysis <span class="icon info">i</span></label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="microdeletions" name="additions" value="microdeletions">
+                                        <label for="microdeletions">Microdeletions <span class="icon info">i</span></label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="eaa" name="additions" value="eaa">
+                                        <label for="eaa">Expanded Aneuploidy Analysis (EAA) <span class="icon info">i</span></label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="order-buttons">
+                        <button class="button-add" type="button">Add to order</button>
+                        <button class="button-order" type="submit">Order now</button>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="test-package">
+                    <div class="test-summary">
+                        <div class="title-column">
+                            <div class="test-header">
+                                <span class="test-title">Foresight <span class="reg-mark">&reg;</span></span>
+                                <span class="test-description">Carrier Screening</span>
+                            </div>
+                            <span class="plus">+</span>
+                            <div class="test-header">
+                                <span class="test-title">Prequel <span class="reg-mark">&reg;</span></span>
+                                <span class="test-description">Prenatal Screen</span>
+                            </div> 
+                        </div>
+                        <div class="description-column">
+                            <span class="test-description">Order both test kits with one form.</span>
+                        </div>
+                        <button class="details-toggle"><span class="icon arrow-up"></span></button>
+                    </div>
+                    <div class="test-details">
+                        <div class="detail-column detail-info">
+                            <span class="test-detail">Detail 1</span>
+                        </div>
+                        <div class="detail-column detail-options">
+                            <span class="test-detail">Detail 2</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="selected-amount">
+            <div><span class="selected-amount">0</span> selected</div>
+            <div><button class="continue">Continue ></button></div>
+        </div>
+    </div>`;
 
-    // Move any test-package blocks authored in Universal Editor into the list
-    const testPackageList = block.querySelector('#test-package-list');
-    // Find all child blocks with data-block-name="test-package" (these are authored in the editor)
-    const authoredBlocks = Array.from(block.querySelectorAll('[data-block-name="test-package"]'));
-    authoredBlocks.forEach((pkgBlock) => {
-        const li = document.createElement('li');
-        li.appendChild(pkgBlock);
-        testPackageList.appendChild(li);
+  block.innerHTML = markup;
+
+  const toggleButtons = document.getElementsByClassName("details-toggle");
+
+  for (const button of toggleButtons) {
+    button.addEventListener("click", () => {
+      const testPackageContainer = button.closest(".test-package");
+      testPackageContainer.classList.toggle("show");
     });
-
-    // Dynamically decorate all test-package blocks
-    if (authoredBlocks.length > 0) {
-        const mod = await import('../test-package/test-package.js');
-        authoredBlocks.forEach((pkgBlock) => {
-            if (mod && typeof mod.default === 'function') {
-                mod.default(pkgBlock);
-            }
-        });
-    }
+  }
 }
