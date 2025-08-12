@@ -1,6 +1,17 @@
 export default function decorate(block) {
   const markup = `
     <div id="order-accordion">
+        <div id="list-filter" class="custom-dropdown">
+            <div id="current-selection">Women's Health</div>
+            <div id="filter-options">
+                <button class="filter-option">Men's Health</button>
+                <button class="filter-option">Pediatric</button>
+            </div>
+        </div>
+        <div class="selected-amount">
+            <div><span class="selected-amount">0</span> selected</div>
+            <div><button class="continue">Continue ></button></div>
+        </div>
         <ul id="test-package-list">
             <li>
                 <div class="test-package">
@@ -98,14 +109,14 @@ export default function decorate(block) {
                             <form>
                                 <div>
                                     <h3>Pregnancy Type <span class="required">*</span></h3>
-                                    <div>
+                                    <span>
                                         <input type="radio" id="singleton" name="pregnancy-type" value="singleton">
                                         <label for="singleton">Singleton</label>
-                                    </div>
-                                    <div>
+                                    </span>
+                                    <span>
                                         <input type="radio" id="multiples" name="pregnancy-type" value="multiples">
                                         <label for="multiples">Twins/higher order multiples</label>
-                                    </div>
+                                    </span>
                                 </div>
                                 <div>
                                     <h3>Additions (optional)</h3>
@@ -161,6 +172,10 @@ export default function decorate(block) {
                 </div>
             </li>
         </ul>
+        <div class="selected-amount">
+            <div><span class="selected-amount">0</span> selected</div>
+            <div><button class="continue">Continue ></button></div>
+        </div>
     </div>`;
 
   block.innerHTML = markup;
