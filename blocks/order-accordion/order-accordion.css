@@ -1,9 +1,16 @@
 :root {
   --blue: #0172ce;
+  --button-radius: 0.25rem;
   --gray: #8b959a;
+  --lightgray: #dfdfdf;
   --pink: #f6f3ff;
   --shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.2);
   --standard-margin: 2rem;
+}
+button.continue {
+  background-color: var(--lightgray);
+  border-radius: var(--button-radius);
+  color: inherit;
 }
 header .nav-wrapper:after {
   background: linear-gradient(90deg, #ac544f, #0d69c5);
@@ -26,7 +33,7 @@ button.button-add {
 }
 button.button-order {
   background-color: var(--blue);
-  border-radius: 0.25rem;
+  border-radius: var(--button-radius);
   box-shadow: var(--shadow);
   color: white;
 }
@@ -52,10 +59,14 @@ h3 {
 }
 .icon.info {
   background-color: var(--gray);
-  border-radius: 1em;
+  border-radius: 0.8em;
   color: white;
   display: inline-block;
-  font-size: 1em;
+  font-size: 0.7em;
+  text-align: center;
+  height: 1.2em;
+  width: 1.2em;
+  font-weight: 700;
 }
 .package-benefit {
   color: #697685;
@@ -80,6 +91,11 @@ h3 {
   align-items: center;
   justify-content: center;
 }
+#order-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--standard-margin);
+}
 .order-buttons {
   display: none;
   justify-content: flex-end;
@@ -103,6 +119,10 @@ h3 {
   color: var(--blue);
   font-weight: 700;
 }
+.selected-amount {
+  color: var(--gray);
+  text-align: right;
+}
 .test-description {
   color: gray;
   font-size: 0.8rem;
@@ -122,7 +142,7 @@ h3 {
 }
 .test-package {
   background-color: white;
-  border-radius: 0.25rem;
+  border-radius: var(--button-radius);
   box-shadow: var(--shadow);
   padding: var(--standard-margin);
 }
@@ -141,8 +161,9 @@ h3 {
 #test-package-list {
   display: flex;
   flex-direction: column;
-  gap: var(--standard-margin);
+  gap: var(--standard-margin) / 2;
   list-style: none;
+  margin-top: 0;
   padding: 0;
 }
 .test-summary {
