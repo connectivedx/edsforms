@@ -1,0 +1,58 @@
+.wizard.wizard--radio-nav {
+  display: grid;
+  grid-template-columns: 18rem 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.wizard.wizard--radio-nav .wizard__nav {
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid var(--color-border, #ddd);
+  border-radius: 0.75rem;
+}
+
+.wizard.wizard--radio-nav .wizard__nav-item {
+  display: grid;
+  grid-template-columns: 1.25rem auto;
+  gap: 0.5rem;
+  align-items: center;
+  font: inherit;
+  padding: 0.5rem 0.25rem;
+  cursor: pointer;
+}
+
+.wizard.wizard--radio-nav .wizard__nav-item + .wizard__nav-item {
+  border-top: 1px solid var(--color-border, #eee);
+}
+
+.wizard.wizard--radio-nav .wizard__nav-radio {
+  margin: 0;
+}
+
+.wizard.wizard--radio-nav .wizard__nav-text {
+  line-height: 1.3;
+}
+
+.wizard.wizard--radio-nav .wizard__content {
+  min-width: 0;
+}
+
+.wizard.wizard--radio-nav .wizard__panel[aria-hidden="true"] {
+  display: none;
+}
+
+.wizard.wizard--radio-nav .wizard__panel.is-active {
+  animation: fade-in 160ms ease-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; translate: 0 4px; }
+  to   { opacity: 1; translate: 0 0; }
+}
+
+@media (max-width: 900px) {
+  .wizard.wizard--radio-nav {
+    grid-template-columns: 1fr;
+  }
+}

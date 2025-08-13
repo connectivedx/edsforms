@@ -604,24 +604,24 @@
           }
         },
         {
-          "title": "Wizard Extended",
+          "title": "Wizard-extended",
           "id": "wizard-extended",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer",
                 "template": {
-                  "jcr:title": "Wizard Extended",
+                  "jcr:title": "Wizard-extended",
                   "fieldType": "panel",
                   "fd:viewType": "wizard-extended",
                   "minOccur": 1,
                   "panel1": {
-                    "jcr:title": "Step 1",
+                    "jcr:title": "Item 1",
                     "fieldType": "panel",
                     "sling:resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer"
                   },
                   "panel2": {
-                    "jcr:title": "Step 2",
+                    "jcr:title": "Item 2",
                     "fieldType": "panel",
                     "sling:resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer"
                   }
