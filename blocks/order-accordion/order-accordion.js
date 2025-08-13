@@ -183,67 +183,45 @@ export default function decorate(block) {
 
   block.innerHTML = markup;
 
-  // accordion functionality
-  const toggleButtons = document.getElementsByClassName("details-toggle");
-
-  for (const button of toggleButtons) {
-    button.addEventListener("click", () => {
-      const testPackageContainer = button.closest(".test-package");
-      testPackageContainer.classList.toggle("show");
-    });
-  }
-
-  // custom dropdown functionality
-  document
-    .querySelector("#current-selection")
-    .addEventListener("click", function () {
-      document.querySelector("#list-filter").classList.toggle("show");
-    });
-
-  const filterOptions = document.querySelectorAll(
-    "#list-filter .filter-option"
-  );
-
-  for (const option of filterOptions) {
-    option.addEventListener("click", function () {
-      document.querySelector("#current-selection").textContent =
-        this.textContent;
-      document.querySelector("#list-filter").classList.remove("show");
-    });
-  }
-
-  document
-    .querySelector("#list-filter")
-    .addEventListener("click", function (e) {
-      e.stopPropagation();
-    });
-
-  document.body.addEventListener("click", function () {
-    document.querySelector("#list-filter").classList.remove("show");
-  });
-
-  document.body.addEventListener(
-    "click",
-    "#list-filter .filter-option",
-    function (e) {
-      if (e.target.matches("#list-filter .filter-option")) {
-        document.querySelector("#current-selection").textContent =
-          e.target.textContent;
-        document.querySelector("#list-filter").classList.remove("show");
-      }
-    }
-  );
-
   function updateSelectedAmount() {
     const selectedAmount = document.querySelector(".selected-amount");
     selectedAmount.querySelector("span").textContent =
       selectedPackagesArray.length;
   }
 
-  document.body.addEventListener("click", "button.button-add", function () {
-    const testPackage = this.closest(".test-package");
-    const packageName = testPackage.getAttribute("name");
-    selectedPackagesArray.push(packageName);
-    updateSelectedAmount();
+  const listFilter = document.querySelector("#list-filter");
+  listFilter.addEventListener("click", function (e) {
+    e.stopPropagation();
+  });
+
+  document.body.addEventListener("click", function (e) {
+    // close dropdown
+    document.querySelector("#list-filter").classList.remove("show");
+
+    // add package button
+    if (e.target.matches(".button-add")) {
+      const testPackage = e.target.closest(".test-package");
+      const packageName = testPackage.getAttribute("name");
+      selectedPackagesArray.push(packageName);
+      updateSelectedAmount();
+    }
+
+    // dropdown option selection
+    if (e.target.matches("#list-filter .filter-option")) {
+      document.querySelector("#current-selection").textContent =
+        e.target.textContent;
+      document.querySelector("#list-filter").classList.remove("show");
+    }
+
+    // accordion functionality
+    if (e.target.matches(".details-toggle")) {
+      const testPackageContainer = e.target.closest(".test-package");
+      testPackageContainer.classList.toggle("show");
+    }
+
+    // dropdown toggle
+    if (e.target.matches("#current-selection")) {
+      document.querySelector("#list-filter").classList.toggle("show");
+    }
   });
 }
