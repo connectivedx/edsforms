@@ -40,6 +40,24 @@
           "...": "../../models/form-common/_basic-input-fields.json"
         },
         {
+          "component": "select",
+          "name": "classes",
+          "value": "",
+          "label": "Wizard options",
+          "description": "",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "Radio Navigation",
+              "value": "wizard--radio-nav"
+            }
+          ]
+        },
+        {
           "...": "../../models/form-common/_help-container.json"
         }
       ]
