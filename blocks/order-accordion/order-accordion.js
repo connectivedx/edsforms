@@ -7,6 +7,7 @@ export default function decorate(block) {
             <label id="filter-label">Specialty</label>
             <div id="current-selection">Women's Health</div>
             <div id="filter-options">
+                <button class="filter-option">Women's Health</button>
                 <button class="filter-option">Men's Health</button>
                 <button class="filter-option">Pediatric</button>
             </div>
@@ -185,7 +186,7 @@ export default function decorate(block) {
 
   function updateSelectedAmount() {
     const selectedAmount = document.querySelectorAll(".selected-amount");
-    for (elem of selectedAmount) {
+    for (const elem of selectedAmount) {
       elem.querySelector("span").textContent = selectedPackagesArray.length;
     }
   }
