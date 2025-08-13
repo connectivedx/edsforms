@@ -184,15 +184,11 @@ export default function decorate(block) {
   block.innerHTML = markup;
 
   function updateSelectedAmount() {
-    const selectedAmount = document.querySelector(".selected-amount");
-    selectedAmount.querySelector("span").textContent =
-      selectedPackagesArray.length;
+    const selectedAmount = document.querySelectorAll(".selected-amount");
+    for (elem of selectedAmount) {
+      elem.querySelector("span").textContent = selectedPackagesArray.length;
+    }
   }
-
-  const listFilter = document.querySelector("#list-filter");
-  listFilter.addEventListener("click", function (e) {
-    e.stopPropagation();
-  });
 
   document.body.addEventListener("click", function (e) {
     // close dropdown
@@ -210,7 +206,6 @@ export default function decorate(block) {
     if (e.target.matches("#list-filter .filter-option")) {
       document.querySelector("#current-selection").textContent =
         e.target.textContent;
-      document.querySelector("#list-filter").classList.remove("show");
     }
 
     // accordion functionality
@@ -221,6 +216,7 @@ export default function decorate(block) {
 
     // dropdown toggle
     if (e.target.matches("#current-selection")) {
+      e.stopPropagation();
       document.querySelector("#list-filter").classList.toggle("show");
     }
   });
