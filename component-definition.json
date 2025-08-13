@@ -675,21 +675,6 @@
               }
             }
           }
-        },
-        {
-          "title": "Order Accordion Item",
-          "id": "order-accordion-item",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
-                "template": {
-                  "name": "Order Accordion Item",
-                  "model": "order-accordion-item"
-                }
-              }
-            }
-          }
         }
       ]
     }
