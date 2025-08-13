@@ -1,4 +1,5 @@
 export default function decorate(block) {
+<<<<<<< HEAD
   const selectedPackagesArray = [];
 
   const markup = `
@@ -8,17 +9,32 @@ export default function decorate(block) {
             <div id="current-selection">Women's Health</div>
             <div id="filter-options">
                 <button class="filter-option">Women's Health</button>
+=======
+  const markup = `
+    <div id="order-accordion">
+        <div id="list-filter" class="custom-dropdown">
+            <div id="current-selection">Women's Health</div>
+            <div id="filter-options">
+>>>>>>> parent of c5da253 (250812-14:39 Converted order-accordion to parent block component with configurable test-package child components.)
                 <button class="filter-option">Men's Health</button>
                 <button class="filter-option">Pediatric</button>
             </div>
         </div>
+<<<<<<< HEAD
         <div class="selected-amount-container">
+=======
+        <div class="selected-amount">
+>>>>>>> parent of c5da253 (250812-14:39 Converted order-accordion to parent block component with configurable test-package child components.)
             <div><span class="selected-amount">0</span> selected</div>
             <div><button class="continue">Continue ></button></div>
         </div>
         <ul id="test-package-list">
             <li>
+<<<<<<< HEAD
                 <div class="test-package" name="MyRisk">
+=======
+                <div class="test-package">
+>>>>>>> parent of c5da253 (250812-14:39 Converted order-accordion to parent block component with configurable test-package child components.)
                     <div class="test-summary">
                         <div class="title-column">
                             <div class="test-header">
@@ -42,7 +58,11 @@ export default function decorate(block) {
                 </div>
             </li>
             <li>
+<<<<<<< HEAD
                 <div class="test-package" name="Foresight">
+=======
+                <div class="test-package">
+>>>>>>> parent of c5da253 (250812-14:39 Converted order-accordion to parent block component with configurable test-package child components.)
                     <div class="test-summary">
                         <div class="title-column">
                             <div class="test-header">
@@ -66,7 +86,11 @@ export default function decorate(block) {
                 </div>
             </li>
             <li>
+<<<<<<< HEAD
                 <div class="test-package" name="Prequel">
+=======
+                <div class="test-package">
+>>>>>>> parent of c5da253 (250812-14:39 Converted order-accordion to parent block component with configurable test-package child components.)
                     <div class="test-summary">
                         <div class="title-column">
                             <div class="test-header">
@@ -147,7 +171,11 @@ export default function decorate(block) {
                 </div>
             </li>
             <li>
+<<<<<<< HEAD
                 <div class="test-package" name="Foresight+Prequel">
+=======
+                <div class="test-package">
+>>>>>>> parent of c5da253 (250812-14:39 Converted order-accordion to parent block component with configurable test-package child components.)
                     <div class="test-summary">
                         <div class="title-column">
                             <div class="test-header">
@@ -176,7 +204,11 @@ export default function decorate(block) {
                 </div>
             </li>
         </ul>
+<<<<<<< HEAD
         <div class="selected-amount-container">
+=======
+        <div class="selected-amount">
+>>>>>>> parent of c5da253 (250812-14:39 Converted order-accordion to parent block component with configurable test-package child components.)
             <div><span class="selected-amount">0</span> selected</div>
             <div><button class="continue">Continue ></button></div>
         </div>
@@ -184,6 +216,7 @@ export default function decorate(block) {
 
   block.innerHTML = markup;
 
+<<<<<<< HEAD
   function updateSelectedAmount() {
     const selectedAmount = document.querySelectorAll(".selected-amount");
     for (const elem of selectedAmount) {
@@ -221,4 +254,14 @@ export default function decorate(block) {
       document.querySelector("#list-filter").classList.toggle("show");
     }
   });
+=======
+  const toggleButtons = document.getElementsByClassName("details-toggle");
+
+  for (const button of toggleButtons) {
+    button.addEventListener("click", () => {
+      const testPackageContainer = button.closest(".test-package");
+      testPackageContainer.classList.toggle("show");
+    });
+  }
+>>>>>>> parent of c5da253 (250812-14:39 Converted order-accordion to parent block component with configurable test-package child components.)
 }
