@@ -1,16 +1,16 @@
 {
   "definitions": [
     {
-      "title": "Wizard",
-      "id": "wizard",
+      "title": "Wizard-extended",
+      "id": "wizard-extended",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer",
             "template": {
-              "jcr:title": "Wizard",
+              "jcr:title": "Wizard-extended",
               "fieldType": "panel",
-              "fd:viewType": "wizard",
+              "fd:viewType": "wizard-extended",
               "minOccur": 1,
               "panel1": {
                 "jcr:title": "Item 1",
@@ -30,7 +30,7 @@
   ],
   "models": [
     {
-      "id": "wizard",
+      "id": "wizard-extended",
       "fields": [
         {
           "component": "container",
@@ -38,24 +38,6 @@
           "label": "Basic",
           "collapsible": false,
           "...": "../../models/form-common/_basic-input-fields.json"
-        },
-        {
-          "component": "select",
-          "name": "classes",
-          "value": "",
-          "label": "Wizard options",
-          "description": "",
-          "valueType": "string",
-          "options": [
-            {
-              "name": "Default",
-              "value": ""
-            },
-            {
-              "name": "Radio Navigation",
-              "value": "wizard--radio-nav"
-            }
-          ]
         },
         {
           "...": "../../models/form-common/_help-container.json"
