@@ -12,7 +12,7 @@ export default function decorate(block) {
                 <button class="filter-option">Pediatric</button>
             </div>
         </div>
-        <div class="selected-amount">
+        <div class="selected-amount-container">
             <div><span class="selected-amount">0</span> selected</div>
             <div><button class="continue">Continue ></button></div>
         </div>
@@ -176,7 +176,7 @@ export default function decorate(block) {
                 </div>
             </li>
         </ul>
-        <div class="selected-amount">
+        <div class="selected-amount-container">
             <div><span class="selected-amount">0</span> selected</div>
             <div><button class="continue">Continue ></button></div>
         </div>
