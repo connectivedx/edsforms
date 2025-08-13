@@ -153,7 +153,7 @@ h3 {
   color: var(--blue);
   font-weight: 700;
 }
-.selected-amount {
+.selected-amount-container {
   color: var(--gray);
   text-align: right;
 }
