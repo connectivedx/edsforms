@@ -50,22 +50,25 @@ function days(endDate, startDate) {
  */
 function fetchProviders(apiUrl, globals) {
   fetch(apiUrl)
-    .then(resp => resp.json())
-    .then(data => {
+    .then((resp) => resp.json())
+    .then((data) => {
       if (data && Array.isArray(data.Providers)) {
-        const providerNames = data.Providers.map(p => p.provider_name);
+        // Use destructuring to pull provider_name
+        const providerNames = data.Providers.map(({ provider_name }) => provider_name);
 
-        const field = globals.field;
-
+        const { field } = globals;
         if (field) {
-          field.items = providerNames.map(name => ({
+          field.items = providerNames.map((name) => ({
             displayText: name,
-            value: name
+            value: name,
           }));
         }
       }
     })
-    .catch(err => console.error("Error fetching providers:", err));
+    .catch((err) => {
+      // eslint-disable-next-line no-console
+      console.error('Error fetching providers:', err);
+    });
 
   return [];
 }
