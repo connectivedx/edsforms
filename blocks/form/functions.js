@@ -42,5 +42,33 @@ function days(endDate, startDate) {
   return Math.floor(diffInMs / (1000 * 60 * 60 * 24));
 }
 
+/**
+ * @name fetchProviders
+ * @param {string} apiUrl - REST endpoint URL
+ * @param {scope} globals - Form context (auto injected)
+ * @return {string[]} - Provider names
+ */
+function fetchProviders(apiUrl, globals) {
+  fetch(apiUrl)
+    .then(resp => resp.json())
+    .then(data => {
+      if (data && Array.isArray(data.Providers)) {
+        const providerNames = data.Providers.map(p => p.provider_name);
+
+        const field = globals.field;
+
+        if (field) {
+          field.items = providerNames.map(name => ({
+            displayText: name,
+            value: name
+          }));
+        }
+      }
+    })
+    .catch(err => console.error("Error fetching providers:", err));
+
+  return [];
+}
+
 // eslint-disable-next-line import/prefer-default-export
-export { getFullName, days, submitFormArrayToString };
+export { getFullName, days, submitFormArrayToString, fetchProviders };
