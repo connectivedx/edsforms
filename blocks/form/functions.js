@@ -71,8 +71,10 @@ export async function preloadProviders() {
     const providers = responseJSON.Providers || [];
 
     // Map providers → dropdown format
-    providerCache.values = providers.map((p, i) => p.id || i.toString());
-    providerCache.labels = providers.map((p) => p.name || "Unknown");
+    providerCache.values = providers.map(
+      (p, i) => p.group_number || i.toString()
+    );
+    providerCache.labels = providers.map((p) => p.provider_name || "Unknown");
     providerCache.loaded = true;
   } catch (err) {
     console.error("❌ Error loading providers:", err);
