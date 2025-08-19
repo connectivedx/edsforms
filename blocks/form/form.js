@@ -564,10 +564,10 @@ export default async function decorate(block) {
     }
     container.replaceWith(form);
   }
-  const providerCache = preloadProviders();
+  const providerCache = await preloadProviders();
   // build dropdown options
   if (providerCache) {
-    for (provider of providerCache) {
+    for (const provider of providerCache) {
       const option = document.createElement("option");
       option.value = provider.values;
       option.textContent = provider.labels;
