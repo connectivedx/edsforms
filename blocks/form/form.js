@@ -564,5 +564,16 @@ export default async function decorate(block) {
     }
     container.replaceWith(form);
   }
-  preloadProviders();
+  const providerCache = preloadProviders();
+  // build dropdown options
+  if (providerCache) {
+    for (provider of providerCache) {
+      const option = document.createElement("option");
+      option.value = provider.values;
+      option.textContent = provider.labels;
+      document.getElementById("dropdown-7e7d4adec2").appendChild(option);
+    }
+  } else {
+    console.log("error building options");
+  }
 }

@@ -76,6 +76,7 @@ export async function preloadProviders() {
     );
     providerCache.labels = providers.map((p) => p.provider_name || "Unknown");
     providerCache.loaded = true;
+    return providerCache;
   } catch (err) {
     console.error("❌ Error loading providers:", err);
   }
