@@ -6,6 +6,14 @@ header .nav-wrapper {
   position: fixed;
 }
 
+header .nav-wrapper:after {
+  background: linear-gradient(90deg, rgb(255 143 20), rgb(72 28 129), rgb(9 105 198), rgb(60 170 50)); 
+  content: "";
+  display: block;
+  height: 0.5rem;
+  width: 100%;
+}
+
 header nav {
   box-sizing: border-box;
   display: grid;
