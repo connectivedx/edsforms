@@ -17,10 +17,10 @@ function submitFormArrayToString(globals) {
   const data = globals.functions.exportData();
   Object.keys(data).forEach((key) => {
     if (Array.isArray(data[key])) {
-      data[key] = data[key].join(',');
+      data[key] = data[key].join(",");
     }
   });
-  globals.functions.submitForm(data, true, 'application/json');
+  globals.functions.submitForm(data, true, "application/json");
 }
 
 /**
@@ -30,8 +30,8 @@ function submitFormArrayToString(globals) {
  * @returns {number} returns the number of days between two dates
  */
 function days(endDate, startDate) {
-  const start = typeof startDate === 'string' ? new Date(startDate) : startDate;
-  const end = typeof endDate === 'string' ? new Date(endDate) : endDate;
+  const start = typeof startDate === "string" ? new Date(startDate) : startDate;
+  const end = typeof endDate === "string" ? new Date(endDate) : endDate;
 
   // return zero if dates are valid
   if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime())) {
@@ -46,18 +46,20 @@ function days(endDate, startDate) {
 let providerCache = {
   values: [],
   labels: [],
-  loaded: false
+  loaded: false,
 };
 
 // 🔹 Preload API data
-async function preloadProviders() {
+export async function preloadProviders() {
   try {
-    let apiUrl = 'https://apim.workato.com/venuv0/eds-forms-endpoints-v1/getProviders';
-    const resp = await fetch(apiUrl, {
-      method: 'GET',
+    let apiUrl =
+      "https://apim.workato.com/venuv0/eds-forms-endpoints-v1/getProviders";
+    const response = await fetch(apiUrl, {
+      method: "GET",
       headers: {
-        'Content-Type': 'application/json',
-        'api-token': '72e9157ec3edb8b64bbe109917633d5c32348386bc443900cc4a7dcf074069d1',
+        "Content-Type": "application/json",
+        "api-token":
+          "72e9157ec3edb8b64bbe109917633d5c32348386bc443900cc4a7dcf074069d1",
       },
     });
 
@@ -74,10 +76,6 @@ async function preloadProviders() {
   } catch (err) {
     console.error("❌ Error loading providers:", err);
   }
-}
-
-if (typeof document !== "undefined") {
-  document.addEventListener("DOMContentLoaded", preloadProviders);
 }
 
 /**
@@ -97,4 +95,10 @@ function fetchProviderLabels() {
 }
 
 // eslint-disable-next-line import/prefer-default-export
-export { getFullName, days, submitFormArrayToString, fetchProviderValues, fetchProviderLabels };
+export {
+  getFullName,
+  days,
+  submitFormArrayToString,
+  fetchProviderValues,
+  fetchProviderLabels,
+};
