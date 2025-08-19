@@ -1,1 +1,16 @@
-/** css goes here */
+.embed-adaptive-form > fieldset {
+  grid-column-start: 5;
+  grid-column-end: 12;
+  grid-row-start: 1;
+}
+.embed-adaptive-form h2 {
+  border-bottom: 1px solid #875bf7;
+  padding-bottom: 1rem;
+}
+.embed-adaptive-form .wizard-menu-items {
+  flex-direction: column;
+  gap: 0;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 1;
+}
