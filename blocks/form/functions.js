@@ -42,27 +42,58 @@ function days(endDate, startDate) {
   return Math.floor(diffInMs / (1000 * 60 * 60 * 24));
 }
 
+// Global cache so functions can stay synchronous
+let providerCache = {
+  values: [],
+  labels: [],
+  loaded: false
+};
+
+// 🔹 Preload API data
+async function preloadProviders() {
+  try {
+    let apiUrl = 'https://apim.workato.com/venuv0/eds-forms-endpoints-v1/getProviders';
+    const resp = await fetch(apiUrl, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'api-token': '72e9157ec3edb8b64bbe109917633d5c32348386bc443900cc4a7dcf074069d1',
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`API request failed: ${response.status}`);
+    }
+
+    const providers = await response.json();
+
+    // Map providers → dropdown format
+    providerCache.values = providers.map((p, i) => p.id || i.toString());
+    providerCache.labels = providers.map((p) => p.name || "Unknown");
+    providerCache.loaded = true;
+  } catch (err) {
+    console.error("❌ Error loading providers:", err);
+  }
+}
+
+if (typeof document !== "undefined") {
+  document.addEventListener("DOMContentLoaded", preloadProviders);
+}
+
 /**
  * @name fetchProviderValues
- * @param {string} apiUrl - REST endpoint URL
- * @param {scope} globals - (auto-injected, but not used here)
  * @returns {string[]} - Array of option values
  */
-function fetchProviderValues(apiUrl, globals) {
-  // Note: This is synchronous placeholder;
-  // use a synchronous hardcoded or previously fetched list
-  return ["Mercy Health Kings Mills", "Lindner Center of Hope", "Assurance Health"];
+function fetchProviderValues() {
+  return providerCache.loaded ? providerCache.values : [];
 }
 
 /**
  * @name fetchProviderLabels
- * @param {string} apiUrl - REST endpoint URL
- * @param {scope} globals - (auto-injected, but not used here)
- * @returns {string[]} - Array of option display names
+ * @returns {string[]} - Array of option labels
  */
-function fetchProviderLabels(apiUrl, globals) {
-  // Same as values here – just labels
-  return ["Mercy Health Kings Mills", "Lindner Center of Hope", "Assurance Health"];
+function fetchProviderLabels() {
+  return providerCache.loaded ? providerCache.labels : [];
 }
 
 // eslint-disable-next-line import/prefer-default-export
