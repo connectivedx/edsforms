@@ -67,7 +67,8 @@ export async function preloadProviders() {
       throw new Error(`API request failed: ${response.status}`);
     }
 
-    const providers = await response.json();
+    const responseJSON = await response.json();
+    const providers = responseJSON.providers || [];
 
     // Map providers → dropdown format
     providerCache.values = providers.map((p, i) => p.id || i.toString());
