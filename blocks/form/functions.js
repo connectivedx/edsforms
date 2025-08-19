@@ -43,35 +43,27 @@ function days(endDate, startDate) {
 }
 
 /**
- * @name fetchProviders
+ * @name fetchProviderValues
  * @param {string} apiUrl - REST endpoint URL
- * @param {scope} globals - Form context (auto injected)
- * @return {string[]} - Provider names
+ * @param {scope} globals - (auto-injected, but not used here)
+ * @returns {string[]} - Array of option values
  */
-function fetchProviders(apiUrl, globals) {
-  fetch(apiUrl)
-    .then((resp) => resp.json())
-    .then((data) => {
-      if (data && Array.isArray(data.Providers)) {
-        // Use destructuring to pull provider_name
-        const providerNames = data.Providers.map(({ provider_name }) => provider_name);
+function fetchProviderValues(apiUrl, globals) {
+  // Note: This is synchronous placeholder;
+  // use a synchronous hardcoded or previously fetched list
+  return ["Mercy Health Kings Mills", "Lindner Center of Hope", "Assurance Health"];
+}
 
-        const { field } = globals;
-        if (field) {
-          field.items = providerNames.map((name) => ({
-            displayText: name,
-            value: name,
-          }));
-        }
-      }
-    })
-    .catch((err) => {
-      // eslint-disable-next-line no-console
-      console.error('Error fetching providers:', err);
-    });
-
-  return [];
+/**
+ * @name fetchProviderLabels
+ * @param {string} apiUrl - REST endpoint URL
+ * @param {scope} globals - (auto-injected, but not used here)
+ * @returns {string[]} - Array of option display names
+ */
+function fetchProviderLabels(apiUrl, globals) {
+  // Same as values here – just labels
+  return ["Mercy Health Kings Mills", "Lindner Center of Hope", "Assurance Health"];
 }
 
 // eslint-disable-next-line import/prefer-default-export
-export { getFullName, days, submitFormArrayToString, fetchProviders };
+export { getFullName, days, submitFormArrayToString, fetchProviderValues, fetchProviderLabels };
