@@ -13,6 +13,7 @@ import componentDecorator from "./mappings.js";
 import { handleSubmit } from "./submit.js";
 import DocBasedFormToAF from "./transform.js";
 import { preloadProviders } from "./functions.js";
+import { providersSample } from "./providers-sample.js";
 import {
   checkValidation,
   createButton,
@@ -564,24 +565,25 @@ export default async function decorate(block) {
     }
     container.replaceWith(form);
   }
-  const providerCache = await preloadProviders();
+
+  const providerSelect = block.querySelector("#dropdown-7e7d4adec2");
+  providerSelect.innerHTML = "";
+  const providers = JSON.parse(providersSample).Providers;
 
   // build dropdown options
-  if (providerCache) {
+  if (providers) {
     /**
      * Populate select#dropdown-7e7d4adec2 with provider options
      */
-    if (!providerCache.loaded || !providerCache.providers) return;
-    const select = document.querySelector("select#dropdown-7e7d4adec2");
-    if (!select) return;
-    select.innerHTML = "";
-    providerCache.providers.forEach((provider) => {
+    providers.map((provider) => {
       const option = document.createElement("option");
-      option.value = provider.group_number || "";
-      option.textContent = provider.provider_name || "Unknown";
-      select.appendChild(option);
+      option.value = provider.group_number;
+      option.textContent = provider.provider_name;
+      providerSelect.appendChild(option);
     });
   } else {
     console.log("error building options");
   }
+
+  // preloadProviders();
 }

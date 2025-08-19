@@ -1,0 +1,109 @@
+{
+    "Providers": [
+    {
+        "provider_name": "Mercy Health Kings Mills",
+        "provider_type": "Internal",
+        "group_number": "9534545455"
+    },
+    {
+        "provider_name": "Lindner Center of Hope",
+        "provider_type": "Internal",
+        "group_number": "4523423433"
+    },
+    {
+        "provider_name": "Assurance Health",
+        "provider_type": "External",
+        "group_number": "2534634455"
+    },
+    {
+        "provider_name": "West Chester Hospital",
+        "provider_type": "External",
+        "group_number": "6756243444"
+    },
+    {
+        "provider_name": "Bethesda North",
+        "provider_type": "Internal",
+        "group_number": "6345245559"
+    },
+    {
+        "provider_name": "Atrium Medical Center",
+        "provider_type": "Internal",
+        "group_number": "5234234338"
+    },
+    {
+        "provider_name": "a00gK00000FGnH3",
+        "provider_type": "Internal",
+        "group_number": ""
+    },
+    {
+        "provider_name": "testVenu",
+        "provider_type": "Internal",
+        "group_number": ""
+    },
+    {
+        "provider_name": "a00gK00000FGv07",
+        "provider_type": "Internal",
+        "group_number": ""
+    },
+    {
+        "provider_name": "a00gK00000FGvT7",
+        "provider_type": "Internal",
+        "group_number": ""
+    },
+    {
+        "provider_name": "a00gK00000FGxRl",
+        "provider_type": "Internal",
+        "group_number": ""
+    },
+    {
+        "provider_name": "testRawpayload",
+        "provider_type": "Internal",
+        "group_number": ""
+    },
+    {
+        "provider_name": "a00gK00000FH1f0",
+        "provider_type": "Internal",
+        "group_number": ""
+    },
+    {
+        "provider_name": "a00gK00000FH2T0",
+        "provider_type": "Internal",
+        "group_number": ""
+    },
+    {
+        "provider_name": "a00gK00000FH5Ak",
+        "provider_type": "Internal",
+        "group_number": ""
+    },
+    {
+        "provider_name": "a00gK00000FH7cM",
+        "provider_type": "Internal",
+        "group_number": ""
+    },
+    {
+        "provider_name": "a00gK00000FHBjB",
+        "provider_type": "Internal",
+        "group_number": ""
+    },
+    {
+        "provider_name": "a00gK00000FHBrF",
+        "provider_type": "Internal",
+        "group_number": ""
+    },
+    {
+        "provider_name": "a00gK00000FHEAo",
+        "provider_type": "Internal",
+        "group_number": ""
+    },
+    {
+        "provider_name": "a00gK00000FKkkS",
+        "provider_type": "Internal",
+        "group_number": ""
+    },
+    {
+        "provider_name": "a00gK00000FKqpu",
+        "provider_type": "Internal",
+        "group_number": ""
+    }
+]
+}

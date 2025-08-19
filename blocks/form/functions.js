@@ -49,33 +49,54 @@ let providerCache = {
   loaded: false,
 };
 
-// 🔹 Preload API data
+import { providersSample } from "./providers-sample.js";
+
+// Preload API data
 export async function preloadProviders() {
   try {
-    let apiUrl =
-      "https://apim.workato.com/venuv0/eds-forms-endpoints-v1/getProviders";
-    const response = await fetch(apiUrl, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        "api-token":
-          "72e9157ec3edb8b64bbe109917633d5c32348386bc443900cc4a7dcf074069d1",
-      },
-    });
+    // let apiUrl =
+    //   "https://apim.workato.com/venuv0/eds-forms-endpoints-v1/getProviders";
+    // const response = await fetch(apiUrl, {
+    //   method: "GET",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     "api-token":
+    //       "72e9157ec3edb8b64bbe109917633d5c32348386bc443900cc4a7dcf074069d1",
+    //   },
+    // });
 
-    if (!response.ok) {
-      throw new Error(`API request failed: ${response.status}`);
+    // if (!response.ok) {
+    //   throw new Error(`API request failed: ${response.status}`);
+    // }
+
+    // const responseJSON = await response.json();
+    const providers = JSON.parse(providersSample).Providers;
+
+    // // Map providers → dropdown format
+    // providerCache.values = providers.map(
+    //   (p, i) => p.group_number || i.toString()
+    // );
+    // providerCache.labels = providers.map((p) => p.provider_name || "Unknown");
+    // providerCache.loaded = true;
+
+    const providerSelect = document.querySelector("#dropdown-7e7d4adec2");
+    providerSelect.innerHTML = "";
+
+    // build dropdown options
+    if (providers) {
+      /**
+       * Populate select#dropdown-7e7d4adec2 with provider options
+       */
+      providers.map((provider) => {
+        const option = document.createElement("option");
+        option.value = provider.group_number;
+        option.textContent = provider.provider_name;
+        providerSelect.appendChild(option);
+      });
+    } else {
+      console.log("error building options");
     }
 
-    const responseJSON = await response.json();
-    const providers = responseJSON.Providers || [];
-
-    // Map providers → dropdown format
-    providerCache.values = providers.map(
-      (p, i) => p.group_number || i.toString()
-    );
-    providerCache.labels = providers.map((p) => p.provider_name || "Unknown");
-    providerCache.loaded = true;
     return providers;
   } catch (err) {
     console.error("❌ Error loading providers:", err);
