@@ -565,14 +565,22 @@ export default async function decorate(block) {
     container.replaceWith(form);
   }
   const providerCache = await preloadProviders();
+
   // build dropdown options
   if (providerCache) {
-    for (const provider of providerCache) {
+    /**
+     * Populate select#dropdown-7e7d4adec2 with provider options
+     */
+    if (!providerCache.loaded || !providerCache.providers) return;
+    const select = document.querySelector("select#dropdown-7e7d4adec2");
+    if (!select) return;
+    select.innerHTML = "";
+    providerCache.providers.forEach((provider) => {
       const option = document.createElement("option");
-      option.value = provider.values;
-      option.textContent = provider.labels;
-      document.getElementById("dropdown-7e7d4adec2").appendChild(option);
-    }
+      option.value = provider.group_number || "";
+      option.textContent = provider.provider_name || "Unknown";
+      select.appendChild(option);
+    });
   } else {
     console.log("error building options");
   }
