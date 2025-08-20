@@ -12,8 +12,7 @@ import GoogleReCaptcha from "./integrations/recaptcha.js";
 import componentDecorator from "./mappings.js";
 import { handleSubmit } from "./submit.js";
 import DocBasedFormToAF from "./transform.js";
-import { preloadProviders } from "./functions.js";
-import { providersSample } from "./providers-sample.js";
+import { loadProviders } from "./functions.js";
 import {
   checkValidation,
   createButton,
@@ -566,24 +565,5 @@ export default async function decorate(block) {
     container.replaceWith(form);
   }
 
-  const providerSelect = block.querySelector("#dropdown-7e7d4adec2");
-  providerSelect.innerHTML = "";
-  const providers = JSON.parse(providersSample).Providers;
-
-  // build dropdown options
-  if (providers) {
-    /**
-     * Populate select#dropdown-7e7d4adec2 with provider options
-     */
-    providers.map((provider) => {
-      const option = document.createElement("option");
-      option.value = provider.group_number;
-      option.textContent = provider.provider_name;
-      providerSelect.appendChild(option);
-    });
-  } else {
-    console.log("error building options");
-  }
-
-  // preloadProviders();
+  loadProviders(block);
 }

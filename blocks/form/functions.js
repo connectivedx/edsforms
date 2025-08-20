@@ -1,3 +1,5 @@
+import { providersSample } from "./providers-sample.js";
+
 /**
  * Get Full Name
  * @name getFullName Concats first name and last name
@@ -49,28 +51,30 @@ let providerCache = {
   loaded: false,
 };
 
-import { providersSample } from "./providers-sample.js";
-
-// Preload API data
-export async function preloadProviders() {
+/**
+ * Load provider API data and build dropdown options
+ * @param {*} block The form element where the dropdown is located
+ */
+export async function loadProviders(block) {
+  let providers;
   try {
-    // let apiUrl =
-    //   "https://apim.workato.com/venuv0/eds-forms-endpoints-v1/getProviders";
-    // const response = await fetch(apiUrl, {
-    //   method: "GET",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     "api-token":
-    //       "72e9157ec3edb8b64bbe109917633d5c32348386bc443900cc4a7dcf074069d1",
-    //   },
-    // });
+    let apiUrl =
+      "https://apim.workato.com/venuv0/eds-forms-endpoints-v1/getProviders";
+    const response = await fetch(apiUrl, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "api-token":
+          "72e9157ec3edb8b64bbe109917633d5c32348386bc443900cc4a7dcf074069d1",
+      },
+    });
 
-    // if (!response.ok) {
-    //   throw new Error(`API request failed: ${response.status}`);
-    // }
+    if (!response.ok) {
+      throw new Error(`API request failed: ${response.status}`);
+    }
 
-    // const responseJSON = await response.json();
-    const providers = JSON.parse(providersSample).Providers;
+    // load provider data from API
+    providers = await response.json().Providers;
 
     // // Map providers → dropdown format
     // providerCache.values = providers.map(
@@ -79,27 +83,42 @@ export async function preloadProviders() {
     // providerCache.labels = providers.map((p) => p.provider_name || "Unknown");
     // providerCache.loaded = true;
 
-    const providerSelect = document.querySelector("#dropdown-7e7d4adec2");
-    providerSelect.innerHTML = "";
-
     // build dropdown options
-    if (providers) {
-      /**
-       * Populate select#dropdown-7e7d4adec2 with provider options
-       */
-      providers.map((provider) => {
-        const option = document.createElement("option");
-        option.value = provider.group_number;
-        option.textContent = provider.provider_name;
-        providerSelect.appendChild(option);
-      });
-    } else {
-      console.log("error building options");
-    }
-
-    return providers;
+    // if (providers) {
+    //   providers.map((provider) => {
+    //     const option = document.createElement("option");
+    //     option.value = provider.group_number;
+    //     option.textContent = provider.provider_name;
+    //     providerSelect.appendChild(option);
+    //   });
   } catch (err) {
     console.error("❌ Error loading providers:", err);
+    // load sample providers data
+    providers = JSON.parse(providersSample).Providers;
+  }
+
+  // build dropdown options
+  if (providers) {
+    const providerSelect = block.querySelector("#dropdown-7e7d4adec2");
+    providerSelect.innerHTML = "";
+
+    // add default option
+    const defaultOption = document.createElement("option");
+    defaultOption.disabled = true;
+    defaultOption.value = "";
+    defaultOption.selected = true;
+    defaultOption.textContent = "Search";
+    providerSelect.appendChild(defaultOption);
+
+    // add all options from data source
+    providers.map((provider) => {
+      const option = document.createElement("option");
+      option.value = provider.group_number;
+      option.textContent = provider.provider_name;
+      providerSelect.appendChild(option);
+    });
+  } else {
+    console.log("error building options");
   }
 }
 
