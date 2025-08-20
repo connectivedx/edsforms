@@ -23,9 +23,9 @@ export const submitBaseUrl = 'https://publish-p92368-e968987.adobeaemcloud.com';
 
 export const SUBMISSION_SERVICE = 'https://forms.adobe.com/adobe/forms/af/submit/';
 
-// export function setSubmitBaseUrl(url) {
-//   submitBaseUrl = url;
-// }
+export function setSubmitBaseUrl(url) {
+  submitBaseUrl = url;
+}
 
 export function getSubmitBaseUrl() {
   return submitBaseUrl;
