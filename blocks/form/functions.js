@@ -111,9 +111,12 @@ export async function loadProviders(block) {
     providerSelect.appendChild(defaultOption);
 
     // add all options from data source
-    providers.map((provider) => {
+    providers.map((provider, index) => {
       const option = document.createElement("option");
-      option.value = provider.group_number;
+      option.value = index;
+      if (provider.group_number) {
+        option.setAttribute("data-group-number", provider.group_number);
+      }
       option.textContent = provider.provider_name;
       providerSelect.appendChild(option);
     });
