@@ -73,11 +73,16 @@
 body {
   display: none;
   margin: 0;
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
+  background: linear-gradient(0deg, #e7ebf5 0%, #ffffff 100%);
+  background-size: cover;
   color: var(--text-color);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
   line-height: 1.6;
+}
+
+body {
 }
 
 body.appear {

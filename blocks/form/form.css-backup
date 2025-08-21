@@ -1,12 +1,9 @@
 :root {
     --background-color-primary: #fff;
-    /* --label-color: #666; */
-    --label-color: #8b959a;
-    /* --border-color: #818a91; */
-    --border-color: rgb(198 198 198);
+    --label-color: #666;
+    --border-color: #818a91;
     --form-error-color: #ff5f3f;
-    /* --button-primary-color: #5F8DDA; */
-    --button-primary-color: rgb(0 53 149);
+    --button-primary-color: #5F8DDA;
     --button-secondary-color: #666;
     --button-primary-hover-color: #035fe6;
     --form-font-size-m: 22px;
@@ -15,11 +12,8 @@
     --form-background-color: var(--background-color-primary);
     --form-padding: 0 10px;
     --form-columns: 12;
-    /* --form-field-horz-gap: 40px; */
-    --form-field-horz-gap: 0.75rem;
-    /* --form-field-vert-gap: 20px; */
-    /* --form-field-vert-gap: 0; */
-    --form-field-vert-gap: 2rem;
+    --form-field-horz-gap: 40px;
+    --form-field-vert-gap: 20px;
     --form-invalid-border-color: #ff5f3f;
     --form-input-padding: 0.75rem 0.6rem;
     --form-input-font-size: 1rem;
@@ -36,41 +30,33 @@
     --form-label-font-weight: 400;
     --form-title-font-weight: 600;
     --form-fieldset-border: 0;
-    --form-fieldset-margin: 0;
+    --form-fieldset-marign: 0;
     --form-fieldset-columns: 1;
-    /* --form-fieldset-legend-color: var(--form-label-color); */
-    --form-fieldset-legend-color: #444;
-    /* --form-fieldset-legend-font-size: var(--form-label-font-size); */
-    --form-fieldset-legend-font-size: var(--form-font-size-m);
-    /* --form-fieldset-legend-font-weight: var(--form-title-font-weight); */
-    --form-fieldset-legend-font-weight: 500;
+    --form-fieldset-legend-color: var(--form-label-color);
+    --form-fieldset-legend-font-size: var(--form-label-font-size);
+    --form-fieldset-legend-font-weight: var(--form-title-font-weight);
     --form-fieldset-legend-border: none;
     --form-fieldset-legend-padding: 0;
     --form-button-color: var(--background-color-primary);
     --form-button-font-size: var(--form-font-size-s);
-    /* --form-button-background-color: var(--button-primary-color); */
     --form-button-background-color: var(--button-primary-color);
     --form-button-background-hover-color: var(--button-primary-hover-color);
     --form-button-border: 2px solid transparent;
-    --form-button-padding:0.5rem 1rem;
+    --form-button-padding:15px 50px;
     --form-upload-color: var(--form-label-color);
     --form-upload-font-size: var(--form-font-size-xs);
     --form-upload-background-color: var(--background-color-primary);
     --form-submit-width: 100%;
     --form-width: 100%;
     --form-wizard-border: 0;
-    /* --form-wizard-background-color: var(--background-color-primary); */
-    --form-wizard-background-color: transparent;
+    --form-wizard-background-color: var(--background-color-primary);
     --form-wizard-border-color: #757575;
-    /* --form-wizard-number-color: var(--button-primary-color); */
-    --form-wizard-number-default-color: rgb(205 213 223);
-    --form-wizard-number-highlight-color: rgb(135 91 247);
+    --form-wizard-number-color: var(--button-primary-color);
     --form-wizard-padding: 0px;
     --form-wizard-padding-bottom: 160px;
     --form-wizard-step-legend-padding: 10px;
     --form-wizard-step-legend-font-size: 1.1rem;
-    /* --form-field-gap: 5px; */
-    --form-field-gap: 0;
+    --form-field-gap: 5px;
     
     /* Card styling variables */
     --form-card-border-color: #e0e0e0;
@@ -83,18 +69,10 @@
     --form-card-selected-background: #F5F9FF;
     --form-card-selected-shadow: 0 0 0 1px var(--button-primary-color);
     --form-card-transition: all 0.15s ease-in-out;
-
-    /* Myriad standard styles */
-    --standard-border-radius: 0.25rem;
-    --standard-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 * {
     box-sizing: border-box;
-}
-
-.form button[type=submit] {
-    float: right;
 }
 
 main .form pre {
@@ -112,13 +90,13 @@ form:not(.edit-mode) [data-visible="false"] {
 }
 
 main .form-container {
-    /* background-color: var(--form-background-color); */
+    background-color: var(--form-background-color);
     padding: var(--form-padding);
     width: var(--form-width);
 }
 
 main .form {
-    /* background-color: var(--form-background-color); */
+    background-color: var(--form-background-color);
 }
 
 main .form > div:not(:first-child) {
@@ -133,15 +111,8 @@ main .form form {
 
 main .form form fieldset {
     border: var(--form-fieldset-border);
-    border-radius: var(--standard-border-radius);
-    margin: var(--form-fieldset-margin);
+    margin: var(--form-fieldset-marign);
     width: 100%;
-}
-
-main .form form .current-wizard-step > fieldset {
-    background: white;
-    box-shadow: var(--standard-box-shadow);
-    padding: 2rem;
 }
 
 main .form form fieldset fieldset {
@@ -181,7 +152,6 @@ main .form form .field-invalid .field-description {
   }
 
 main .form select {
-    color: #444;
     padding-top: 0;
     padding-bottom: 0;
   }
@@ -198,8 +168,8 @@ main .form select {
     font-size: var(--form-input-font-size);
     max-width: unset;
     margin-top: .5rem;
-    margin-bottom: 0;
-    border-radius: var(--standard-border-radius);
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
 }
 
 main .form input:hover, main .form select:hover {
@@ -243,7 +213,7 @@ main .form fieldset:not(.checkbox-group-wrapper, .radio-group-wrapper) legend {
     border-bottom: var(--form-fieldset-legend-border);
     width: 100%;
     padding: var(--form-fieldset-legend-padding);
-    /* margin-bottom: 10px; */
+    margin-bottom: 10px;
 }
 
 main .form label,
@@ -444,13 +414,12 @@ input::file-selector-button {
 }
 
 main .form button {
+    color: var(--form-button-color);
     background: var(--form-button-background-color);
     border: var(--form-button-border);
-    border-radius: var(--standard-border-radius);
-    box-shadow: var(--standard-box-shadow);
-    color: var(--form-button-color);
-    font-size: var(--form-button-font-size);
     padding: var(--form-button-padding);
+    font-size: var(--form-button-font-size);
+    border-radius: unset;
     width: 100%;
 }
 
@@ -574,8 +543,8 @@ main .form form .wizard  {
   padding: 20px var(--form-wizard-padding);
 }
 
-main .form form .wizard > fieldset > legend {
-    /* display: none; */
+main .form form .wizard > fieldset > legend{
+    display: none;
 }
 
 main .form form .wizard > fieldset:not(.current-wizard-step){
@@ -603,44 +572,33 @@ main .form form .wizard .wizard-button-wrapper .field-wrapper{
     padding: 0;
     margin: 0;
     font-weight: var(--form-fieldset-legend-font-weight);
-    /* font-size: var(--form-fieldset-legend-font-size); */
-    font-size: var(--form-label-font-size);
+    font-size: var(--form-fieldset-legend-font-size);
     color: var(--form-fieldset-legend-color);
     padding-bottom: var(--form-wizard-padding);
     grid-column: span 12;
 }
 
 main .form form .wizard .wizard-menu-item {
-    border-radius: 0.5rem;
-    counter-increment: wizard-step-counter;
-    display: flex;
-    align-items: center;
-    padding: 0.75rem 1.5rem;
+  counter-increment: wizard-step-counter;
 }
 
 main .form form .wizard .wizard-menu-item::before {
-    background-color: var(--form-wizard-number-default-color);
-    border: 2px solid var(--form-wizard-number-default-color);
-    border-radius: 50%;
-    color: var(--form-wizard-number-default-color);
-    content: counter(wizard-step-counter);
-    display: inline-block;
-    height: 1rem;
-    line-height: 1;
-    margin-right: 10px;
-    text-align: center;
-    width: 1rem;
+  content: counter(wizard-step-counter);
+  border: 2px solid var(--form-wizard-number-color);
+  color: var(--form-wizard-number-color);
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+  text-align: center;
+  line-height: 2;
+  display: inline-block;
 }
 
-main .form form .wizard .wizard-menu-active-item {
-    background-color: rgb(246 243 255);
-}
-
-main .form form .wizard .wizard-menu-active-item::before {
-  border: 2px solid var(--form-wizard-number-highlight-color);
-  background: var(--form-wizard-number-highlight-color);
-  color: var(--form-wizard-number-highlight-color);
-  /* color: var(--background-color-primary); */
+main .form form .wizard .wizard-menu-active-item::before{
+  border: 2px solid var(--form-wizard-number-color);
+  background: var(--form-wizard-number-color);
+  color: var(--background-color-primary);
   font-weight: 600;
 }
 
@@ -666,19 +624,19 @@ main form .panel-wrapper {
   flex-direction: column;
 }
 
-main .form form .panel-wrapper {
+main .form form .panel-wrapper{
   display: grid;
   grid-template-columns: repeat(var(--form-columns), minmax(0, 1fr));
   gap: var(--form-field-vert-gap) var(--form-field-horz-gap);
 }
 
-main .form form .repeat-wrapper {
+main .form form .repeat-wrapper{
     display: grid;
     grid-template-columns: repeat(var(--form-columns), minmax(0, 1fr));
     gap: var(--form-field-vert-gap) var(--form-field-horz-gap);
 }
 
-main .form form .wizard.left .panel-wrapper {
+main .form form .wizard.left .panel-wrapper{
   flex: 1;
 }
 
@@ -691,6 +649,7 @@ main .form form .wizard.left .panel-wrapper {
 
     main .form form .panel-wrapper {
         flex-flow: row wrap;
+        gap: 10px 15px;
     }
 }
 
@@ -724,7 +683,7 @@ main .form .file-wrapper .file-drag-area {
 }
 
 /* grid css */
-main .form form .field-wrapper .field-description {
+main .form form .field-wrapper .field-description{
   grid-column: span 12;
 }
 
@@ -795,21 +754,9 @@ main .form form:not(.edit-mode) .captcha-wrapper{
 
 main .form form .radio-group-wrapper.horizontal,
 main .form form .checkbox-group-wrapper.horizontal {
-    /* display: flex; */
-    display: grid;
+    display: flex;
     flex-flow: row wrap;
-    /* gap: inherit; */
-    gap: 0.5rem;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-main .form form .checkbox-group-wrapper legend {
-    margin-bottom: 0.5rem;
-}
-
-main .form form .checkbox-group-wrapper label,
-main .form form .radio-group-wrapper label {
-    color: #444;
+    gap: inherit;
 }
 
 main .form form .radio-group-wrapper.horizontal .field-description,
@@ -820,11 +767,10 @@ main .form form .checkbox-group-wrapper.horizontal .field-description {
 }
 
 main div.form-wrapper {
-    /* background: white; */
-    /* padding: 40px; */
-    padding: 0;
+    background: white;
+    padding: 40px;
     border-radius: 12px;
-    /* box-shadow: 0 4px 24px rgb(0 0 0 / 8%); */
+    box-shadow: 0 4px 24px rgb(0 0 0 / 8%);
 }
 
 /* Responsive adjustments for mobile */
