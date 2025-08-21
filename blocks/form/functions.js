@@ -48,77 +48,55 @@ function days(endDate, startDate) {
  */
 export async function loadProviders(block) {
   let providers;
-  try {
-    let apiUrl =
-      "https://apim.workato.com/venuv0/eds-forms-endpoints-v1/getProviders";
-    const response = await fetch(apiUrl, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        "api-token":
-          "72e9157ec3edb8b64bbe109917633d5c32348386bc443900cc4a7dcf074069d1",
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error(`API request failed: ${response.status}`);
-    }
-
-    // load provider data from API
-    providers = await response.json().Providers;
-  } catch (err) {
-    console.error("❌ Error loading providers:", err);
-  }
-
-  // build dropdown options
-  if (providers) {
-    const providerSelect = block.querySelector("#dropdown-7e7d4adec2");
-    providerSelect.innerHTML = "";
-
-    // add default option
-    const defaultOption = document.createElement("option");
-    defaultOption.disabled = true;
-    defaultOption.value = "";
-    defaultOption.selected = true;
-    defaultOption.textContent = "Search";
-    providerSelect.appendChild(defaultOption);
-
-    // add all options from data source
-    providers.map((provider, index) => {
-      const option = document.createElement("option");
-      option.value = index;
-      if (provider.group_number) {
-        option.setAttribute("data-group-number", provider.group_number);
+  let apiUrl =
+    "https://apim.workato.com/venuv0/eds-forms-endpoints-v1/getProviders";
+  fetch(apiUrl, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "api-token":
+        "72e9157ec3edb8b64bbe109917633d5c32348386bc443900cc4a7dcf074069d1",
+    },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`API request failed: ${response.status}`);
       }
-      option.textContent = provider.provider_name;
-      providerSelect.appendChild(option);
+      return response.json();
+    })
+    .then((data) => {
+      providers = data.Providers;
+      // build dropdown options
+      if (providers) {
+        const providerSelect = block.querySelector("#dropdown-7e7d4adec2");
+        providerSelect.innerHTML = "";
+
+        // add default option
+        const defaultOption = document.createElement("option");
+        defaultOption.disabled = true;
+        defaultOption.value = "";
+        defaultOption.selected = true;
+        defaultOption.textContent = "Search";
+        providerSelect.appendChild(defaultOption);
+
+        // add all options from data source
+        providers.map((provider, index) => {
+          const option = document.createElement("option");
+          option.value = index;
+          if (provider.group_number) {
+            option.setAttribute("data-group-number", provider.group_number);
+          }
+          option.textContent = provider.provider_name;
+          providerSelect.appendChild(option);
+        });
+      } else {
+        console.log("error building options");
+      }
+    })
+    .catch((err) => {
+      console.error("❌ Error loading providers:", err);
     });
-  } else {
-    console.log("error building options");
-  }
-}
-
-/**
- * @name fetchProviderValues
- * @returns {string[]} - Array of option values
- */
-function fetchProviderValues() {
-  return providerCache.loaded ? providerCache.values : [];
-}
-
-/**
- * @name fetchProviderLabels
- * @returns {string[]} - Array of option labels
- */
-function fetchProviderLabels() {
-  return providerCache.loaded ? providerCache.labels : [];
 }
 
 // eslint-disable-next-line import/prefer-default-export
-export {
-  getFullName,
-  days,
-  submitFormArrayToString,
-  fetchProviderValues,
-  fetchProviderLabels,
-};
+export { getFullName, days, submitFormArrayToString };
