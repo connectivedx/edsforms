@@ -12,6 +12,7 @@ import GoogleReCaptcha from "./integrations/recaptcha.js";
 import componentDecorator from "./mappings.js";
 import { handleSubmit } from "./submit.js";
 import DocBasedFormToAF from "./transform.js";
+import { loadProviders } from "./functions.js";
 import {
   checkValidation,
   createButton,
@@ -563,4 +564,6 @@ export default async function decorate(block) {
     }
     container.replaceWith(form);
   }
+
+  loadProviders(block);
 }
