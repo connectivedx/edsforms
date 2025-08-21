@@ -17,10 +17,10 @@ function submitFormArrayToString(globals) {
   const data = globals.functions.exportData();
   Object.keys(data).forEach((key) => {
     if (Array.isArray(data[key])) {
-      data[key] = data[key].join(',');
+      data[key] = data[key].join(",");
     }
   });
-  globals.functions.submitForm(data, true, 'application/json');
+  globals.functions.submitForm(data, true, "application/json");
 }
 
 /**
@@ -30,8 +30,8 @@ function submitFormArrayToString(globals) {
  * @returns {number} returns the number of days between two dates
  */
 function days(endDate, startDate) {
-  const start = typeof startDate === 'string' ? new Date(startDate) : startDate;
-  const end = typeof endDate === 'string' ? new Date(endDate) : endDate;
+  const start = typeof startDate === "string" ? new Date(startDate) : startDate;
+  const end = typeof endDate === "string" ? new Date(endDate) : endDate;
 
   // return zero if dates are valid
   if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime())) {
@@ -51,7 +51,11 @@ function days(endDate, startDate) {
 function fetchProviderValues(apiUrl, globals) {
   // Note: This is synchronous placeholder;
   // use a synchronous hardcoded or previously fetched list
-  return ["Mercy Health Kings Mills", "Lindner Center of Hope", "Assurance Health"];
+  return [
+    "Mercy Health Kings Mills",
+    "Lindner Center of Hope",
+    "Assurance Health",
+  ];
 }
 
 /**
@@ -62,8 +66,36 @@ function fetchProviderValues(apiUrl, globals) {
  */
 function fetchProviderLabels(apiUrl, globals) {
   // Same as values here – just labels
-  return ["Mercy Health Kings Mills", "Lindner Center of Hope", "Assurance Health"];
+  return [
+    "Mercy Health Kings Mills",
+    "Lindner Center of Hope",
+    "Assurance Health",
+  ];
 }
 
 // eslint-disable-next-line import/prefer-default-export
-export { getFullName, days, submitFormArrayToString, fetchProviderValues, fetchProviderLabels };
+export {
+  getFullName,
+  days,
+  submitFormArrayToString,
+  fetchProviderValues,
+  fetchProviderLabels,
+};
+
+document.addEventListener("click", function (e) {
+  // if click bubbles up to .field-description container, show info tooltip
+  if (e.target.getAttribute("data-description")) {
+    console.log(e.target);
+    e.stopPropagation();
+    e.target.classList.add("show");
+  }
+});
+
+// click outside behavior
+document.body.addEventListener("click", function (e) {
+  document.querySelectorAll(".show").forEach((desc) => {
+    if (desc !== e.target) {
+      desc.classList.remove("show");
+    }
+  });
+});
