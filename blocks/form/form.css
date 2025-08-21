@@ -93,8 +93,84 @@
     box-sizing: border-box;
 }
 
+div[data-description] {
+    position: relative;
+}
+
+div[data-description] label::before {
+    background: var(--label-color);
+    border-radius: 2em;
+    color: white;
+    content: 'i';
+    display: inline-flex;
+    font-size: 0.6rem;
+    font-weight: 700;
+    justify-content: center;
+    margin-left: 0.3rem;
+    margin-top: 0.5em;
+    text-align: center;
+    vertical-align: middle;
+    width: 1rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+form > fieldset {
+  grid-column-start: 5;
+  grid-column-end: 12;
+  grid-row-start: 1;
+}
+
+form h2 {
+  border-bottom: 1px solid #875bf7;
+  padding-bottom: 1rem;
+}
+
+form .wizard-menu-items {
+  flex-direction: column;
+  gap: 0;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 1;
+}
+
+form > fieldset > fieldset > legend {
+    margin-bottom: 2rem;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: normal;
+}
+
 .form button[type=submit] {
     float: right;
+}
+
+legend {
+    font-size: var(--form-fieldset-legend-font-size);
+    font-weight: var(--form-fieldset-legend-font-weight);
+    letter-spacing: 0.5px;
+}
+
+main .form div .field-description {
+    background-color: white;
+    border: 1px solid var(--form-input-border-color);
+    border-radius: var(--standard-border-radius);
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+    display: none;
+    padding: 0.5rem 1rem;
+    position: absolute;
+    right: -2rem;
+    top: -3em;
+    z-index: 10;
+}
+
+main .form div.show .field-description {
+    display: block;
+}
+
+main .form .field-description p {
+    margin: 0;
 }
 
 main .form pre {
@@ -237,8 +313,8 @@ main .form textarea {
 }
 
 main .form fieldset:not(.checkbox-group-wrapper, .radio-group-wrapper) legend {
-    font-weight: var(--form-fieldset-legend-font-weight);
-    font-size: var(--form-fieldset-legend-font-size);
+    /* font-weight: var(--form-fieldset-legend-font-weight); */
+    /* font-size: var(--form-fieldset-legend-font-size); */
     color: var(--form-fieldset-legend-color);
     border-bottom: var(--form-fieldset-legend-border);
     width: 100%;
@@ -450,6 +526,7 @@ main .form button {
     box-shadow: var(--standard-box-shadow);
     color: var(--form-button-color);
     font-size: var(--form-button-font-size);
+    font-weight: 400;
     padding: var(--form-button-padding);
     width: 100%;
 }
