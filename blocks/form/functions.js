@@ -1,5 +1,3 @@
-import { providersSample } from "./providers-sample.js";
-
 /**
  * Get Full Name
  * @name getFullName Concats first name and last name
@@ -44,13 +42,6 @@ function days(endDate, startDate) {
   return Math.floor(diffInMs / (1000 * 60 * 60 * 24));
 }
 
-// Global cache so functions can stay synchronous
-let providerCache = {
-  values: [],
-  labels: [],
-  loaded: false,
-};
-
 /**
  * Load provider API data and build dropdown options
  * @param {*} block The form element where the dropdown is located
@@ -75,26 +66,8 @@ export async function loadProviders(block) {
 
     // load provider data from API
     providers = await response.json().Providers;
-
-    // // Map providers → dropdown format
-    // providerCache.values = providers.map(
-    //   (p, i) => p.group_number || i.toString()
-    // );
-    // providerCache.labels = providers.map((p) => p.provider_name || "Unknown");
-    // providerCache.loaded = true;
-
-    // build dropdown options
-    // if (providers) {
-    //   providers.map((provider) => {
-    //     const option = document.createElement("option");
-    //     option.value = provider.group_number;
-    //     option.textContent = provider.provider_name;
-    //     providerSelect.appendChild(option);
-    //   });
   } catch (err) {
     console.error("❌ Error loading providers:", err);
-    // load sample providers data
-    providers = JSON.parse(providersSample).Providers;
   }
 
   // build dropdown options
