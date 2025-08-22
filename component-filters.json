@@ -17,8 +17,7 @@
       "columns",
       "fragment",
       "form",
-      "embed-adaptive-form",
-      "order-accordion"
+      "embed-adaptive-form"
     ]
   },
   {
@@ -68,7 +67,8 @@
       "telephone-input",
       "text-input",
       "tnc",
-      "wizard"
+      "wizard",
+      "review"
     ]
   }
 ]
