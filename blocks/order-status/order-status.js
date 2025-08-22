@@ -33,14 +33,14 @@ export default function decorate(block) {
         }
     ]
 }`;
-  const orderTemplate = `<div id="order-{{orderId}}">
+  const orderTemplate = `<div id="order-{{orderId}}" class="order">
       <h2>{{productName}}</h2>
-      <p>Order Date: {{orderDate}}</p>
-      <p>Status: {{status}}</p>
-      <p>Tracking Number: {{trackingNumber}}</p>
-      <p>Sample Received Date: {{sampleReceivedDate}}</p>
-      <p>Results Available Date: {{resultsAvailableDate}}</p>
-      <p>Notes: {{notes}}</p>
+      <p><span class="order-key">Order Date:</span> <span name="order-date">{{orderDate}}</span></p>
+      <p><span class="order-key">Status:</span> <span name="order-status">{{status}}</span></p>
+      <p><span class="order-key">Tracking Number:</span> <span name="order-tracking">{{trackingNumber}}</span></p>
+      <p><span class="order-key">Sample Received Date:</span> <span name="order-sample-received">{{sampleReceivedDate}}</span></p>
+      <p><span class="order-key">Results Available Date:</span> <span name="order-results-available">{{resultsAvailableDate}}</span></p>
+      <p><span class="order-key">Notes:</span> <span name="order-notes">{{notes}}</span></p>
     </div>`;
 
   function renderOrderStatus(order) {
@@ -57,9 +57,20 @@ export default function decorate(block) {
   }
 
   const orderStatusJSON = JSON.parse(orderStatusApiData);
-  console.log(orderStatusJSON);
+
+  // Function to iterate over orders and create markup for each
+  function renderAllOrders(orders) {
+    return orders.map(renderOrderStatus).join("");
+  }
+
   const orderStatusMarkup = document.createElement("h1");
   orderStatusMarkup.textContent = "Order Status";
   block.innerHTML = "";
   block.append(orderStatusMarkup);
+
+  // Create a container for all orders with the correct class for styling
+  const ordersContainer = document.createElement("div");
+  ordersContainer.className = "order-status-container";
+  ordersContainer.innerHTML = renderAllOrders(orderStatusJSON.orders);
+  block.append(ordersContainer);
 }
