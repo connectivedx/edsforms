@@ -1,38 +1,7 @@
 export default function decorate(block) {
-  let orderStatus = [];
-  const orderStatusApiData = `{
-    "orders": [
-        {
-        "orderId": "ORD-1001",
-        "productName": "Foresight® Carrier Screen",
-        "orderDate": "2025-08-05",
-        "status": "Completed – View Results",
-        "trackingNumber": "TRACK12345",
-        "sampleReceivedDate": "2025-08-10",
-        "resultsAvailableDate": "2025-08-25",
-        "notes": "Returns complete, report available in patient portal"
-        },
-        {
-        "orderId": "ORD-1002",
-        "productName": "Prequel® Prenatal Screen",
-        "orderDate": "2025-08-15",
-        "status": "Processing",
-        "trackingNumber": "TRACK67890",
-        "expectedSampleArrival": "2025-08-20",
-        "expectedResultsDate": "2025-08-29",
-        "notes": "Blood draw scheduled via mobile phlebotomy"
-        },
-        {
-        "orderId": "ORD-1003",
-        "productName": "MyRisk® Hereditary Cancer Test",
-        "orderDate": "2025-08-20",
-        "status": "Pending",
-        "trackingNumber": null,
-        "expectedShipmentDate": "2025-08-22",
-        "notes": "Doctor needs to sign off order"
-        }
-    ]
-}`;
+  const orderStatusAPI =
+    "https://apim.workato.com/venuv0/eds-forms-endpoints-v1/getOrders";
+
   const orderTemplate = `<div id="order-{{orderId}}" class="order">
       <h2>{{productName}}</h2>
       <p><span class="order-key">Order Date:</span> <span name="order-date">{{orderDate}}</span></p>
@@ -56,12 +25,26 @@ export default function decorate(block) {
     return orderHTML;
   }
 
-  const orderStatusJSON = JSON.parse(orderStatusApiData);
-
   // Function to iterate over orders and create markup for each
   function renderAllOrders(orders) {
     return orders.map(renderOrderStatus).join("");
   }
+
+  fetch(orderStatusAPI, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "api-token":
+        "72e9157ec3edb8b64bbe109917633d5c32348386bc443900cc4a7dcf074069d1",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      ordersContainer.innerHTML = renderAllOrders(data.orders);
+    })
+    .catch((error) => {
+      console.error("Error fetching order status:", error);
+    });
 
   const orderStatusMarkup = document.createElement("h1");
   orderStatusMarkup.textContent = "Order Status";
@@ -71,6 +54,6 @@ export default function decorate(block) {
   // Create a container for all orders with the correct class for styling
   const ordersContainer = document.createElement("div");
   ordersContainer.className = "order-status-container";
-  ordersContainer.innerHTML = renderAllOrders(orderStatusJSON.orders);
+
   block.append(ordersContainer);
 }
