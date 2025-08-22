@@ -17,9 +17,13 @@
       "columns",
       "fragment",
       "form",
+<<<<<<< HEAD
       "embed-adaptive-form",
       "order-accordion",
       "order-status"
+=======
+      "embed-adaptive-form"
+>>>>>>> main
     ]
   },
   {
@@ -69,7 +73,8 @@
       "telephone-input",
       "text-input",
       "tnc",
-      "wizard"
+      "wizard",
+      "review"
     ]
   }
 ]
