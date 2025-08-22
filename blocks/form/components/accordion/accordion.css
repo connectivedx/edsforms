@@ -5,11 +5,25 @@
     --color-accordion-border: #ecedf3;
 }
 
+/* main .form fieldset.accordion legend.accordion-legend */
+main .form .accordion > fieldset  {
+    background-color: white ;
+}
+/* main .form fieldset.accordion > fieldset:not(.checkbox-group-wrapper, .radio-group-wrapper) */
+main .form fieldset.accordion > fieldset
+ + fieldset:not(.checkbox-group-wrapper, .radio-group-wrapper) {
+    margin-top: 2rem;
+}
+
+main .form .accordion legend {
+    background-color: transparent;
+}
+
 main .form fieldset.accordion legend.accordion-legend {
     padding: 24px 32px;
-    background-color: var(--color-accordion-legend-background);
+    /* background-color: var(--color-accordion-legend-background);   */
     position: relative;
-    margin-bottom: 0;
+    /* margin-bottom: 0; */
 }
 
 main .form .accordion > fieldset > legend.accordion-legend[data-visible='false'] {

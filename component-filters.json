@@ -18,7 +18,8 @@
       "fragment",
       "form",
       "embed-adaptive-form",
-      "order-accordion"
+      "order-accordion",
+      "order-status"
     ]
   },
   {
