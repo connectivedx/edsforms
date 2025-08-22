@@ -17,13 +17,9 @@
       "columns",
       "fragment",
       "form",
-<<<<<<< HEAD
       "embed-adaptive-form",
       "order-accordion",
       "order-status"
-=======
-      "embed-adaptive-form"
->>>>>>> main
     ]
   },
   {
