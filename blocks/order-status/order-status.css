@@ -1,0 +1,68 @@
+/* Modern and polished styling for order status blocks */
+:root {
+	--order-blue: #0172ce;
+	--order-radius: 0.5rem;
+	--order-gray: #8b959a;
+	--order-lightgray: #f4f6fa;
+	--order-shadow: 0 2px 8px rgba(0,0,0,0.08);
+	--order-margin: 2rem;
+}
+
+.order-key {
+	font-weight: bold;
+}
+
+.order-status-container {
+	flex-direction: column;
+	gap: var(--order-margin);
+	margin-top: var(--order-margin);
+}
+
+[id^="order-"] {
+	background: #fff;
+	border-radius: var(--order-radius);
+	box-shadow: var(--order-shadow);
+	padding: 2rem;
+	margin-bottom: 1.5rem;
+	transition: box-shadow 0.2s;
+}
+
+[id^="order-"]:hover {
+	box-shadow: 0 4px 16px rgba(1,114,206,0.12);
+}
+
+[id^="order-"] h2 {
+	color: var(--order-blue);
+	font-size: 1.5rem;
+	margin-bottom: 0.5rem;
+}
+
+[id^="order-"] p {
+	color: #333;
+	margin: 0.25rem 0;
+	font-size: 1rem;
+}
+
+[id^="order-"] p:last-child {
+	margin-bottom: 0;
+}
+
+.order-status-container h1 {
+	font-size: 2.2rem;
+	margin-bottom: 1.5rem;
+}
+
+@media (max-width: 600px) {
+	[id^="order-"] {
+		padding: 1rem;
+	}
+	.order-status-container {
+		gap: 1rem;
+	}
+	.order-status-container h1 {
+		font-size: 1.5rem;
+	}
+	[id^="order-"] h2 {
+		font-size: 1.1rem;
+	}
+}
