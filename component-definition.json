@@ -677,23 +677,6 @@
           }
         },
         {
-          "title": "Quote",
-          "id": "quote",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Quote",
-                  "model": "quote",
-                  "quote": "<p>You miss 100% of the shots you don't take.</p>",
-                  "author": "Wayne Gretzky"
-                }
-              }
-            }
-          }
-        },
-        {
           "title": "Order Accordion",
           "id": "order-accordion",
           "plugins": {
