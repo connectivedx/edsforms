@@ -5167,6 +5167,25 @@
     ]
   },
   {
+    "id": "quote",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "quote",
+        "value": "",
+        "label": "Quote",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "quthor",
+        "label": "Author",
+        "value": ""
+      }      
+    ]
+  },
+  {
     "id": "order-accordion",
     "fields": [
       {
